@@ -20,11 +20,13 @@
     "react-text-mask": "^5.4.3",
     "typeface-roboto": "0.0.54"
   },
+  "homepage": "https://kamadzy.github.io/gergunpdf/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "npm run build&&gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
