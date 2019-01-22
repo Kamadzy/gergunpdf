@@ -1,16 +1,16 @@
 {
-  "main.css": "/gergunpdf/static/css/main.6782be31.chunk.css",
-  "main.js": "/gergunpdf/static/js/main.922664cf.chunk.js",
-  "main.js.map": "/gergunpdf/static/js/main.922664cf.chunk.js.map",
+  "main.css": "/gergunpdf/static/css/main.c819def1.chunk.css",
+  "main.js": "/gergunpdf/static/js/main.5560c64b.chunk.js",
+  "main.js.map": "/gergunpdf/static/js/main.5560c64b.chunk.js.map",
   "static/css/1.b11cf7ed.chunk.css": "/gergunpdf/static/css/1.b11cf7ed.chunk.css",
   "static/js/1.50a947d8.chunk.js": "/gergunpdf/static/js/1.50a947d8.chunk.js",
   "static/js/1.50a947d8.chunk.js.map": "/gergunpdf/static/js/1.50a947d8.chunk.js.map",
   "runtime~main.js": "/gergunpdf/static/js/runtime~main.0302be60.js",
   "runtime~main.js.map": "/gergunpdf/static/js/runtime~main.0302be60.js.map",
   "static/media/index.css": "/gergunpdf/static/media/roboto-latin-900italic.bc833e72.woff",
-  "static/css/main.6782be31.chunk.css.map": "/gergunpdf/static/css/main.6782be31.chunk.css.map",
+  "static/css/main.c819def1.chunk.css.map": "/gergunpdf/static/css/main.c819def1.chunk.css.map",
   "static/css/1.b11cf7ed.chunk.css.map": "/gergunpdf/static/css/1.b11cf7ed.chunk.css.map",
   "index.html": "/gergunpdf/index.html",
-  "precache-manifest.ad835605dd243dc9d9577886e4a23cab.js": "/gergunpdf/precache-manifest.ad835605dd243dc9d9577886e4a23cab.js",
+  "precache-manifest.515bb3656d4980f94703d8f12d0c2e8e.js": "/gergunpdf/precache-manifest.515bb3656d4980f94703d8f12d0c2e8e.js",
   "service-worker.js": "/gergunpdf/service-worker.js"
 }
