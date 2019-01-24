@@ -178,7 +178,29 @@ class Page1 extends Component {
       emplSalary3: "",
       emplDrug3: "",
       mainSignature: "",
-      signDate: ""
+      signDate: "",
+      //alco-drug
+      //1
+      aclDrugCheckQYes1: false,
+      alcDrugCheckQYesText1: "",
+      aclDrugCheckQNo1: false,
+      alcDrugCheckQNoText1: "",
+      //2
+      aclDrugCheckQYes2: false,
+      alcDrugCheckQYesText2: "",
+      aclDrugCheckQNo2: false,
+      alcDrugCheckQNoText2: "",
+      //3
+      aclDrugCheckQYes3: false,
+      alcDrugCheckQYesText3: "",
+      aclDrugCheckQNo3: false,
+      alcDrugCheckQNoText3: "",
+      //4
+      aclDrugCheckQYes4: false,
+      alcDrugCheckQYesText4: "",
+      aclDrugCheckQNo4: false,
+      alcDrugCheckQNoText4: "",
+
     };
   }
 
@@ -358,7 +380,41 @@ class Page1 extends Component {
 
     doc.addPage();
     doc.addImage(this.state.page3Image, 'PNG', 0, 0, 210, 297);
-    doc.text(30, 30, this.state.name);
+    doc.text(37.5, 26.5, this.state.name);
+    doc.text(139, 26.5, this.state.driverLic);
+    doc.text(29, 33, this.state.address);
+    doc.text(141, 33, this.state.stateIssue);
+    doc.text(20, 39.3, this.state.city);
+    doc.text(122, 39.3, this.state.socialNumber);
+    doc.text(116, 54, "Gergun Transportation INC")
+    doc.text(116, 60, "7236 Parkvale way Citrus Heights CA 95621")
+    doc.text(18, 85, this.state.name)
+    doc.text(133, 85, "Gergun Transportation INC");
+    doc.setFont("PlayfairDisplay-Italic", "serif");
+    doc.setFontSize(16);
+    doc.text(10, 109, this.state.mainSignature);
+    doc.setFont('helvetica', "normal")
+    doc.setFontSize(12);
+    doc.text(74, 109, this.state.signDate);
+    //alcDrugQuestions
+    doc.text(181, 134.5, this.state.alcDrugCheckQYesText1);
+    doc.text(188, 134.5, this.state.alcDrugCheckQNoText1);
+    doc.text(179.8, 156.1, this.state.alcDrugCheckQYesText2);
+    doc.text(187.5, 156.1, this.state.alcDrugCheckQNoText2);
+    doc.text(179.8, 160.8, this.state.alcDrugCheckQYesText3);
+    doc.text(187.5, 160.8, this.state.alcDrugCheckQNoText3);
+    doc.text(179.8, 164.8, this.state.alcDrugCheckQYesText4);
+    doc.text(187.5, 164.8, this.state.alcDrugCheckQNoText4);
+    doc.setFont("PlayfairDisplay-Italic", "serif");
+    doc.setFontSize(16);
+    doc.text(30, 264, this.state.mainSignature);
+    doc.setFont('helvetica', "normal")
+    doc.setFontSize(12);
+    doc.text(133, 264, this.state.signDate);
+
+
+
+
 
     doc.save("react-main-test.pdf");
   };
@@ -406,6 +462,55 @@ class Page1 extends Component {
     this.setState(prevState => ({
       violCheckQNo2: !prevState.violCheckQNo2,
       violCheckQNoText2: !prevState.violCheckQNo2 ? "x" : ""
+    }));
+  };
+
+  alcDrugHandleCheckQYes1 = () => {
+    this.setState(prevState => ({
+      aclDrugCheckQYes1: !prevState.aclDrugCheckQYes1,
+      alcDrugCheckQYesText1: !prevState.aclDrugCheckQYes1 ? "x" : ""
+    }));
+  };
+  alcDrugHandleCheckQNo1 = () => {
+    this.setState(prevState => ({
+      aclDrugCheckQNo1: !prevState.aclDrugCheckQNo1,
+      alcDrugCheckQNoText1: !prevState.aclDrugCheckQNo1 ? "x" : ""
+    }));
+  };
+  alcDrugHandleCheckQYes2 = () => {
+    this.setState(prevState => ({
+      aclDrugCheckQYes2: !prevState.aclDrugCheckQYes2,
+      alcDrugCheckQYesText2: !prevState.aclDrugCheckQYes2 ? "x" : ""
+    }));
+  };
+  alcDrugHandleCheckQNo2 = () => {
+    this.setState(prevState => ({
+      aclDrugCheckQNo2: !prevState.aclDrugCheckQNo2,
+      alcDrugCheckQNoText2: !prevState.aclDrugCheckQNo2 ? "x" : ""
+    }));
+  };
+  alcDrugHandleCheckQYes3 = () => {
+    this.setState(prevState => ({
+      aclDrugCheckQYes3: !prevState.aclDrugCheckQYes3,
+      alcDrugCheckQYesText3: !prevState.aclDrugCheckQYes3 ? "x" : ""
+    }));
+  };
+  alcDrugHandleCheckQNo3 = () => {
+    this.setState(prevState => ({
+      aclDrugCheckQNo3: !prevState.aclDrugCheckQNo3,
+      alcDrugCheckQNoText3: !prevState.aclDrugCheckQNo3 ? "x" : ""
+    }));
+  };
+  alcDrugHandleCheckQYes4 = () => {
+    this.setState(prevState => ({
+      aclDrugCheckQYes4: !prevState.aclDrugCheckQYes4,
+      alcDrugCheckQYesText4: !prevState.aclDrugCheckQYes4 ? "x" : ""
+    }));
+  };
+  alcDrugHandleCheckQNo4 = () => {
+    this.setState(prevState => ({
+      aclDrugCheckQNo4: !prevState.aclDrugCheckQNo4,
+      alcDrugCheckQNoText4: !prevState.aclDrugCheckQNo4 ? "x" : ""
     }));
   };
 
@@ -2076,9 +2181,112 @@ class Page1 extends Component {
                 name="signDate"
                 onChange={this.onChange}
               />
-
             </dir>
+          </div>
+        </div>
+        <div className="page3-content">
+          <h5 className="alcDrug-headline">Alcohol & Drug History</h5>
+          <div className="row alcoDrug-ques1">
+            <p>Has the driver participated in the RANDOM controlled substances testing program for the previous 12 months?</p>
+            <FormControlLabel
+              label="Yes"
+              control={
+                <Checkbox
+                  value={this.state.alcDrugCheckQYesText1}
+                  onChange={this.alcDrugHandleCheckQYes1}
+                  color="primary"
+                  className="expCheckBox"
+                />
+              }
+            />
+            <FormControlLabel
+              label="No"
+              control={
+                <Checkbox
+                  value={this.state.alcDrugCheckQNoText1}
+                  onChange={this.alcDrugHandleCheckQNo1}
+                  color="primary"
+                  className="expCheckBox"
+                />
+              }
+            />
+          </div>
+          <p className="alcoDrug-semiText">Plese provide all of the documentation from the driver's past alcohol and drug testing results <br /> and documentation of participation in another/any drug testing program.</p>
 
+          <div className="row alcoDrug-ques2">
+            <p>Has the above named driver had an alcoholic test with a result of 0.04 alcohol concentration or greater?</p>
+            <FormControlLabel
+              label="Yes"
+              control={
+                <Checkbox
+                  value={this.state.alcDrugCheckQYesText2}
+                  onChange={this.alcDrugHandleCheckQYes2}
+                  color="primary"
+                  className="expCheckBox"
+                />
+              }
+            />
+            <FormControlLabel
+              label="No"
+              control={
+                <Checkbox
+                  value={this.state.alcDrugCheckQNoText2}
+                  onChange={this.alcDrugHandleCheckQNo2}
+                  color="primary"
+                  className="expCheckBox"
+                />
+              }
+            />
+          </div>
+          <div className="row alcoDrug-ques3">
+            <p>Has the above named driver verified positive for controlled substances test result?</p>
+            <FormControlLabel
+              label="Yes"
+              control={
+                <Checkbox
+                  value={this.state.alcDrugCheckQYesText3}
+                  onChange={this.alcDrugHandleCheckQYes3}
+                  color="primary"
+                  className="expCheckBox"
+                />
+              }
+            />
+            <FormControlLabel
+              label="No"
+              control={
+                <Checkbox
+                  value={this.state.alcDrugCheckQNoText3}
+                  onChange={this.alcDrugHandleCheckQNo3}
+                  color="primary"
+                  className="expCheckBox"
+                />
+              }
+            />
+          </div>
+          <div className="row alcoDrug-ques4">
+            <p>Has the above named driver refused a request test for alcohol or drugs during the past 12 months?</p>
+            <FormControlLabel
+              label="Yes"
+              control={
+                <Checkbox
+                  value={this.state.alcDrugCheckQYesText4}
+                  onChange={this.alcDrugHandleCheckQYes4}
+                  color="primary"
+                  className="expCheckBox"
+                />
+              }
+            />
+            <FormControlLabel
+              label="No"
+              control={
+                <Checkbox
+                  value={this.state.alcDrugCheckQNoText4}
+                  onChange={this.alcDrugHandleCheckQNo4}
+                  color="primary"
+                  className="expCheckBox"
+                />
+              }
+            />
           </div>
         </div>
         <Button variant="contained" color="primary" onClick={() => this.generagePdf()}>
