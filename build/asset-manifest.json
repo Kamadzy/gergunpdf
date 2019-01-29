@@ -1,16 +1,16 @@
 {
-  "main.css": "/gergunpdf/static/css/main.c819def1.chunk.css",
-  "main.js": "/gergunpdf/static/js/main.5560c64b.chunk.js",
-  "main.js.map": "/gergunpdf/static/js/main.5560c64b.chunk.js.map",
+  "main.css": "/gergunpdf/static/css/main.5f846f8e.chunk.css",
+  "main.js": "/gergunpdf/static/js/main.e3561792.chunk.js",
+  "main.js.map": "/gergunpdf/static/js/main.e3561792.chunk.js.map",
   "static/css/1.b11cf7ed.chunk.css": "/gergunpdf/static/css/1.b11cf7ed.chunk.css",
-  "static/js/1.50a947d8.chunk.js": "/gergunpdf/static/js/1.50a947d8.chunk.js",
-  "static/js/1.50a947d8.chunk.js.map": "/gergunpdf/static/js/1.50a947d8.chunk.js.map",
+  "static/js/1.8c6b9afc.chunk.js": "/gergunpdf/static/js/1.8c6b9afc.chunk.js",
+  "static/js/1.8c6b9afc.chunk.js.map": "/gergunpdf/static/js/1.8c6b9afc.chunk.js.map",
   "runtime~main.js": "/gergunpdf/static/js/runtime~main.0302be60.js",
   "runtime~main.js.map": "/gergunpdf/static/js/runtime~main.0302be60.js.map",
   "static/media/index.css": "/gergunpdf/static/media/roboto-latin-900italic.bc833e72.woff",
-  "static/css/main.c819def1.chunk.css.map": "/gergunpdf/static/css/main.c819def1.chunk.css.map",
   "static/css/1.b11cf7ed.chunk.css.map": "/gergunpdf/static/css/1.b11cf7ed.chunk.css.map",
+  "static/css/main.5f846f8e.chunk.css.map": "/gergunpdf/static/css/main.5f846f8e.chunk.css.map",
   "index.html": "/gergunpdf/index.html",
-  "precache-manifest.515bb3656d4980f94703d8f12d0c2e8e.js": "/gergunpdf/precache-manifest.515bb3656d4980f94703d8f12d0c2e8e.js",
+  "precache-manifest.fe334880fd1499f0229c9aa440902baf.js": "/gergunpdf/precache-manifest.fe334880fd1499f0229c9aa440902baf.js",
   "service-worker.js": "/gergunpdf/service-worker.js"
 }
