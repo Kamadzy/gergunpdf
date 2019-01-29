@@ -21,7 +21,7 @@
 
 .dateOfApp {
   border: none !important;
-  /* border-bottom: solid 1px grey !important; */
+  border-bottom: solid 1px grey !important;
   padding-top: 20px !important;
   width: 20%;
   /* padding-bottom: 7px !important; */
