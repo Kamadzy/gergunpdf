@@ -428,7 +428,6 @@
 .alcoDrug-semiText {
   font-weight: bold;
   text-align: center;
-
 }
 
 .alcoDrug-ques2 p {
@@ -456,13 +455,13 @@
 .sertOfViolTableTh {
   text-align: center;
   width: 35%;
-  vertical-align: middle !important
+  vertical-align: middle !important;
 }
 
 .sertOfViolTableTh1 {
   text-align: center;
   width: 15%;
-  vertical-align: middle !important
+  vertical-align: middle !important;
 }
 
 .sertOfViolTableTh4 {
@@ -473,4 +472,96 @@
 .sertOfViolTableDate {
   border: none !important;
   /* border-bottom: solid 1px grey !important; */
+}
+
+.w9DocHeadline {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.w9Image {
+  width: 80%;
+  height: 50%;
+  margin-left: 80px;
+  position: relative !important;
+  overflow: hidden;
+}
+.w9DocMain {
+  /* background-image: url(./Driver-File-12.jpg); */
+  /* position: relative;
+  text-align: center; */
+  /* position: absolute !important;
+  width: 100%; */
+}
+
+.w9NameInput {
+  position: absolute !important;
+  left: 28.5%;
+  top: 4647px;
+  background-color: #f2f2f2;
+  height: 20px;
+  width: 35%;
+}
+.w9CompanyName {
+  position: absolute !important;
+  left: 28.5%;
+  top: 4681px;
+  background-color: #f2f2f2;
+  height: 20px;
+  width: 35%;
+}
+.w9IndividualCheck {
+  position: absolute !important;
+  left: 580px;
+  top: 4690px;
+}
+.w9CorpCheck {
+  position: absolute !important;
+  left: 737px;
+  top: 4690px;
+}
+.w9PartnershipCheck {
+  position: absolute !important;
+  left: 834px;
+  top: 4690px;
+}
+.w9ClassTax {
+  position: absolute !important;
+  left: 1008px;
+  top: 4713px;
+  background-color: #f2f2f2;
+  height: 20px;
+  width: 3.5%;
+}
+.w9Address {
+  position: absolute !important;
+  left: 476px;
+  top: 4767px;
+  background-color: #f2f2f2;
+  height: 20px;
+  width: 27%;
+}
+.w9AddressSec {
+  position: absolute !important;
+  left: 476px;
+  top: 4803px;
+  background-color: #f2f2f2;
+  height: 20px;
+  width: 27%;
+}
+.w9SocNumber {
+  position: absolute !important;
+  left: 1009px;
+  top: 4902px;
+  background-color: #f2f2f2;
+  height: 20px;
+  width: 11.2%;
+}
+.w9IdentfNumber {
+  position: absolute !important;
+  left: 1009px;
+  top: 4950px;
+  background-color: #f2f2f2;
+  height: 20px;
+  width: 11.2%;
 }
