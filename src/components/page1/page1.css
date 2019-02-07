@@ -484,84 +484,95 @@
   height: 50%;
   margin-left: 80px;
   position: relative !important;
-  overflow: hidden;
+  text-align: center;
 }
-.w9DocMain {
-  /* background-image: url(./Driver-File-12.jpg); */
-  /* position: relative;
-  text-align: center; */
-  /* position: absolute !important;
-  width: 100%; */
-}
-
 .w9NameInput {
-  position: absolute !important;
-  left: 28.5%;
-  top: 4647px;
+  position: relative !important;
+  left: 190px;
+  top: -1013px;
   background-color: #f2f2f2;
   height: 20px;
-  width: 35%;
+  width: 50%;
 }
 .w9CompanyName {
-  position: absolute !important;
-  left: 28.5%;
-  top: 4681px;
+  position: relative !important;
+  left: -365px;
+  top: -978px;
   background-color: #f2f2f2;
   height: 20px;
-  width: 35%;
+  width: 50%;
 }
 .w9IndividualCheck {
-  position: absolute !important;
-  left: 580px;
-  top: 4690px;
+  position: relative !important;
+  left: 308px;
+  top: -990px;
 }
 .w9CorpCheck {
-  position: absolute !important;
-  left: 737px;
-  top: 4690px;
+  position: relative !important;
+  left: 418px;
+  top: -990px;
 }
 .w9PartnershipCheck {
-  position: absolute !important;
-  left: 834px;
-  top: 4690px;
+  position: relative !important;
+  left: 463px;
+  top: -990px;
 }
 .w9ClassTax {
-  position: absolute !important;
-  left: 1008px;
-  top: 4713px;
+  position: relative !important;
+  left: 572px;
+  top: -985px;
   background-color: #f2f2f2;
   height: 20px;
   width: 3.5%;
 }
 .w9Address {
-  position: absolute !important;
-  left: 476px;
-  top: 4767px;
+  position: relative !important;
+  left: 2px;
+  top: -930px;
   background-color: #f2f2f2;
   height: 20px;
-  width: 27%;
+  width: 41%;
 }
 .w9AddressSec {
-  position: absolute !important;
-  left: 476px;
-  top: 4803px;
+  position: relative !important;
+  left: -453px;
+  top: -895px;
   background-color: #f2f2f2;
   height: 20px;
-  width: 27%;
+  width: 41%;
 }
 .w9SocNumber {
-  position: absolute !important;
-  left: 1009px;
-  top: 4902px;
+  position: relative !important;
+  left: 723px;
+  top: -838px;
   background-color: #f2f2f2;
   height: 20px;
-  width: 11.2%;
+  width: 17.1%;
+  border: none;
 }
 .w9IdentfNumber {
-  position: absolute !important;
-  left: 1009px;
-  top: 4961px;
+  position: relative !important;
+  left: 533px;
+  top: -779px;
   background-color: #f2f2f2;
   height: 20px;
-  width: 11.2%;
+  width: 17.1%;
+  border: none;
+}
+.w9Signature {
+  position: relative !important;
+  left: -93px;
+  top: -557px;
+  background-color: #f2f2f2;
+  height: 28px;
+  width: 30%;
+}
+.w9SignatureDate {
+  position: relative !important;
+  left: -14px;
+  top: -555px;
+  background-color: #f2f2f2;
+  height: 28px;
+  width: 9%;
+  border: none;
 }
