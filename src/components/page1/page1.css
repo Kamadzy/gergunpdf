@@ -77,7 +77,7 @@
 
 .social-number {
   border: none !important;
-  /* border-bottom: solid 1px grey !important; */
+  border-bottom: solid 1px grey !important;
   /* padding-bottom: 7px !important; */
   padding-top: 20px !important;
   margin-right: 40px !important;
@@ -504,23 +504,23 @@
 }
 .w9IndividualCheck {
   position: relative !important;
-  left: 308px;
+  left: 295px;
   top: -990px;
 }
 .w9CorpCheck {
   position: relative !important;
-  left: 418px;
+  left: 405px;
   top: -990px;
 }
 .w9PartnershipCheck {
   position: relative !important;
-  left: 463px;
+  left: 453px;
   top: -990px;
 }
 .w9ClassTax {
   position: relative !important;
-  left: 572px;
-  top: -985px;
+  left: 578px;
+  top: -981px;
   background-color: #f2f2f2;
   height: 20px;
   width: 3.5%;
@@ -528,7 +528,7 @@
 .w9Address {
   position: relative !important;
   left: 2px;
-  top: -930px;
+  top: -926px;
   background-color: #f2f2f2;
   height: 20px;
   width: 41%;
@@ -536,7 +536,7 @@
 .w9AddressSec {
   position: relative !important;
   left: -453px;
-  top: -895px;
+  top: -891px;
   background-color: #f2f2f2;
   height: 20px;
   width: 41%;
@@ -544,7 +544,7 @@
 .w9SocNumber {
   position: relative !important;
   left: 723px;
-  top: -838px;
+  top: -830px;
   background-color: #f2f2f2;
   height: 20px;
   width: 17.1%;
@@ -553,7 +553,7 @@
 .w9IdentfNumber {
   position: relative !important;
   left: 533px;
-  top: -779px;
+  top: -771px;
   background-color: #f2f2f2;
   height: 20px;
   width: 17.1%;
@@ -562,7 +562,7 @@
 .w9Signature {
   position: relative !important;
   left: -93px;
-  top: -557px;
+  top: -548px;
   background-color: #f2f2f2;
   height: 28px;
   width: 30%;
@@ -570,9 +570,14 @@
 .w9SignatureDate {
   position: relative !important;
   left: -14px;
-  top: -555px;
+  top: -546px;
   background-color: #f2f2f2;
   height: 28px;
   width: 9%;
   border: none;
+}
+.mainBtn {
+  position: relative !important;
+  margin-bottom: 35px !important;
+  left: 40%;
 }
