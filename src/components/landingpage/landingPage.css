@@ -1,0 +1,171 @@
+* {
+  font-family: "Open Sans", sans-serif;
+}
+
+.logo {
+  width: 180px;
+  height: 110px;
+  border: 1px solid black;
+}
+
+.navbar {
+  background-color: #fff;
+  border-bottom: 0.5px solid #8c8c8c;
+}
+
+.nav-link {
+  color: #8c8c8c;
+  background-image: linear-gradient(#1179b6, #1179b6);
+  background-size: 0 3px, auto;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  transition: all 0.2s ease-out;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.nav-link:hover {
+  color: #8c8c8c;
+  background-size: 100% 3px, auto;
+}
+
+span.navbar-toggler-icon {
+  color: black;
+}
+
+.small img {
+  content: url(./img/small_logo-xs.jpg);
+  height: 50px;
+  width: 50px;
+}
+
+header,
+nav,
+a,
+img,
+.li {
+  transition: 0.6s all;
+  -moz-transition: 0.6s all;
+  -webkit-transition: 0.6s all;
+  -o-transition: 0.6s all;
+}
+
+.space-between {
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+#home-section {
+  background: url(./img/cascadia-wallpaper2.jpg) no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 900px;
+}
+#home-section .home-inner {
+  padding-top: 150px;
+}
+#home-section .home-welcome {
+  margin-top: 30px;
+}
+#home-section .home-welcome h1 {
+  color: #fff;
+  font-size: 50px;
+  -webkit-text-stroke: 0.3px black;
+}
+#home-section .card {
+  margin-top: 100px;
+  background: rgba(17, 121, 182, 0.8);
+}
+
+#about-us {
+  background-color: #e6e6e6;
+}
+#about-us .about-inner {
+  margin-bottom: 50px;
+}
+#about-us .section-title {
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
+#about-us .about-content {
+  font-size: 20px;
+  padding-bottom: 20px;
+}
+
+#services i {
+  color: #1179b6;
+  background: #fff;
+  border: solid 0.5px #333;
+  border-radius: 5px;
+  padding: 4px 8px 4px 8px;
+  font-size: 40px;
+}
+
+#services .services-content {
+  font-size: 20px;
+}
+
+#services .service-img {
+  height: 250px;
+  width: 370px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#contact-section {
+  background-color: #e6e6e6;
+  margin-top: 50px;
+  padding-bottom: 20px;
+}
+#contact-section i {
+  color: #1179b6;
+  background: #e6e6e6;
+  padding: 4px 8px 4px 8px;
+  font-size: 40px;
+}
+
+#driver-appl .main-email {
+  font-weight: bold;
+}
+
+#driver-appl .download-btn {
+  padding-bottom: 30px;
+}
+
+#quote-section .section-title {
+  margin-top: 30px;
+}
+
+#quote-section .red-star {
+  color: red;
+}
+
+#quote-section .quote-ta {
+  resize: none;
+}
+
+#quote-section .quote-text {
+  font-size: 23px;
+  padding-bottom: 20px;
+}
+
+#quote-section .form-group {
+  padding-bottom: 7px;
+}
+
+#copyright-section {
+  background-color: #e6e6e6;
+}
+#copyright-section .footer-copyright {
+  border-top: 1px solid black;
+  margin-top: 50px;
+  font-size: 12px;
+}
+
+@media only screen and (max-width: 540px) {
+  .about-content {
+    padding-left: 15px;
+  }
+}

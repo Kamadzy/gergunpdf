@@ -16,10 +16,6 @@ class Page1 extends Component {
     super(props);
     
     const defaultState = {
-      //pages start
-      //qwerty123
-      
-      //code start
       mainCompanyName: "Gergun Transportation INC",
       name: "",
       dateOfApp: "",
@@ -998,12 +994,9 @@ class Page1 extends Component {
               id="state"
               className="state"
               helperText="STATE"
-              // inputProps={{
-              //   maxLength: 2
-              // }}
-              onInput={(e)=>{ 
-                e.target.value = Math.max(0, parseInt(e.target.value) ).toString().slice(0,2)
-            }}
+              inputProps={{
+                maxLength: 2
+              }}
               name="state"
               value={this.state.state}
               onChange={this.onChange}
