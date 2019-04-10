@@ -9,13 +9,12 @@ import w9Image from "./images/Driver-File-11.jpg";
 import "typeface-roboto";
 import jspdf from "jspdf";
 import "./page1.css";
-import imageStore from "./ImageStore";
+import SignatureFont from "./SignatureFont";
 
 class Page1 extends Component {
 	constructor(props) {
 		super(props);
-
-		const defaultState = {
+		this.state = {
 			mainCompanyName: "Gergun Transportation INC",
 			name: "",
 			dateOfApp: "",
@@ -219,19 +218,20 @@ class Page1 extends Component {
 			w9SignatureDate: ""
 
 		};
-		this.state = {...imageStore, ...defaultState};
 	};
 	generatePdf = () => {
 		const doc = new jspdf();
+		const images = importAll(require.context('./images/', false, /\.(png|jpe?g)$/));
+
 		doc.setFontSize(12);
 		doc.setTextColor("black");
 		//page0
-
-		doc.addImage(this.state.page0Image, "JPG", 0, 0, 210, 297);
+		doc.addImage(createImage(images[0]), "JPG", 0, 0, 210, 297);
+		// doc.addImage(this.state.page0Image, "JPG", 0, 0, 210, 297);
 		doc.text(36, 31.1, this.state.name);
 		//page1
 		doc.addPage();
-		doc.addImage(this.state.page1Image, "JPG", 0, 0, 210, 297);
+		doc.addImage(createImage(images[1]), "JPG", 0, 0, 210, 297);
 
 		//text(x, y, this.state)
 		doc.text(23, 52.5, this.state.name);
@@ -350,7 +350,7 @@ class Page1 extends Component {
 
 		doc.addPage(); //PAGE 2
 
-		doc.addImage(this.state.page2Image, "PNG", 0, 0, 210, 297);
+		doc.addImage(createImage(images[2]), "PNG", 0, 0, 210, 297);
 		doc.text(182, 26, this.state.violCheck ? 'x' : '');
 		doc.text(13, 42.5, this.state.violatLoc1);
 		doc.text(90.5, 42.5, this.state.violatDate1);
@@ -448,8 +448,8 @@ class Page1 extends Component {
 
 		doc.text(15, 286, this.state.mainCompanyName);
 
-		//seting main signature font
-		doc.addFileToVFS("Meddon.ttf", this.state.signatureFont);
+		// setting main signature font
+		doc.addFileToVFS("Meddon.ttf", SignatureFont);
 		doc.addFont("Meddon.ttf", "Meddon", "cursive");
 		doc.setFont("Meddon", "cursive");
 		doc.setFontSize(17);
@@ -462,7 +462,7 @@ class Page1 extends Component {
 
 		//page 3
 		doc.addPage();
-		doc.addImage(this.state.page3Image, 'JPG', 0, 0, 210, 297);
+		doc.addImage(createImage(images[3]), 'JPG', 0, 0, 210, 297);
 		doc.text(37.5, 26.5, this.state.name);
 		doc.text(139, 26.5, this.state.driverLic);
 		doc.text(29, 33, this.state.address);
@@ -498,7 +498,7 @@ class Page1 extends Component {
 
 		//page4
 		doc.addPage();
-		doc.addImage(this.state.page4Image, "JPG", 0, 0, 210, 297);
+		doc.addImage(createImage(images[4]), "JPG", 0, 0, 210, 297);
 		doc.text(15, 78.1, this.state.name);
 		doc.text(148, 78.1, this.state.driverLic);
 		doc.text(55, 87.1, this.state.mainCompanyName);
@@ -514,7 +514,7 @@ class Page1 extends Component {
 		doc.text(110, 155, this.state.mainCompanyName);
 		//page5
 		doc.addPage();
-		doc.addImage(this.state.page5Image, "JPG", 0, 0, 210, 297);
+		doc.addImage(createImage(images[5]), "JPG", 0, 0, 210, 297);
 		doc.text(41, 41.4, this.state.name);
 		doc.text(141, 41.4, this.state.driverLic);
 		doc.text(31, 47.8, this.state.address);
@@ -526,7 +526,7 @@ class Page1 extends Component {
 
 		//page6
 		doc.addPage();
-		doc.addImage(this.state.page6Image, "JPG", 0, 0, 210, 297);
+		doc.addImage(createImage(images[6]), "JPG", 0, 0, 210, 297);
 		doc.text(41, 41, this.state.name);
 		doc.text(141, 41, this.state.driverLic);
 		doc.text(31, 47.1, this.state.address);
@@ -567,7 +567,7 @@ class Page1 extends Component {
 		doc.text(15, 286.5, this.state.mainCompanyName);
 		//page7
 		doc.addPage();
-		doc.addImage(this.state.page7Image, "JPG", 0, 0, 210, 297);
+		doc.addImage(createImage(images[7]), "JPG", 0, 0, 210, 297);
 		doc.text(47, 135, this.state.name);
 		doc.text(158, 135, this.state.signDate);
 		doc.setFont("Meddon", "cursive");
@@ -578,7 +578,7 @@ class Page1 extends Component {
 		doc.text(15, 286.5, this.state.mainCompanyName);
 		//page8
 		doc.addPage();
-		doc.addImage(this.state.page8Image, "JPG", 0, 0, 210, 297);
+		doc.addImage(createImage(images[8]), "JPG", 0, 0, 210, 297);
 		doc.text(62, 57, this.state.name);
 		doc.text(60.5, 63.5, this.state.driverLic);
 		doc.text(53, 70, this.state.address);
@@ -597,7 +597,7 @@ class Page1 extends Component {
 		doc.text(15, 286.5, this.state.mainCompanyName);
 		//page9
 		doc.addPage();
-		doc.addImage(this.state.page9Image, "JPG", 0, 0, 210, 297);
+		doc.addImage(createImage(images[9]), "JPG", 0, 0, 210, 297);
 		doc.setFontSize(18);
 		doc.text(73, 195, this.state.name);
 		doc.setFont("Meddon", "cursive");
@@ -607,7 +607,7 @@ class Page1 extends Component {
 		doc.text(15, 286.5, this.state.mainCompanyName);
 		//page10
 		doc.addPage();
-		doc.addImage(this.state.page10Image, "JPG", 0, 0, 210, 297);
+		doc.addImage(createImage(images[10]), "JPG", 0, 0, 210, 297);
 		doc.text(15, 249.5, this.state.name);
 		doc.text(170, 249.5, this.state.signDate);
 		doc.setFont("Meddon", "cursive");
@@ -618,7 +618,7 @@ class Page1 extends Component {
 		doc.text(15, 286.5, this.state.mainCompanyName);
 		//page11-w9
 		doc.addPage();
-		doc.addImage(this.state.page11Image, "JPG", 0, 0, 210, 297);
+		doc.addImage(createImage(images[11]), "JPG", 0, 0, 210, 297);
 		doc.text(25, 41, this.state.w9NameInput);
 		doc.text(25, 50, this.state.w9CompanyName);
 		doc.text(54.2, 54.5, this.state.w9IndividualCheck ? 'x' : '');
@@ -637,7 +637,7 @@ class Page1 extends Component {
 		doc.text(149, 181.5, this.state.w9SignatureDate);
 		//page12
 		doc.addPage();
-		doc.addImage(this.state.page12Image, "JPG", 0, 0, 210, 297);
+		doc.addImage(createImage(images[12]), "JPG", 0, 0, 210, 297);
 		doc.setFont("Meddon", "cursive");
 		doc.setFontSize(16);
 		doc.text(48, 263.5, this.state.mainSignature);
@@ -647,7 +647,7 @@ class Page1 extends Component {
 		doc.text(15, 286.5, this.state.mainCompanyName);
 		//page13
 		doc.addPage();
-		doc.addImage(this.state.page13Image, "JPG", 0, 0, 210, 297);
+		doc.addImage(createImage(images[13]), "JPG", 0, 0, 210, 297);
 		doc.text(59, 88, this.state.name);
 		doc.text(76, 98, this.state.socialNumber);
 		doc.text(113, 108, this.state.driverLic);
@@ -655,7 +655,7 @@ class Page1 extends Component {
 		doc.text(60, 265.4, "5330 Madison Ave Suit F, Sacramento CA 95841");
 		//page14
 		doc.addPage();
-		doc.addImage(this.state.page14Image, "JPG", 0, 0, 210, 297);
+		doc.addImage(createImage(images[14]), "JPG", 0, 0, 210, 297);
 		doc.setFontSize(16);
 		doc.text(13, 210.3, this.state.name);
 		doc.setFont("Meddon", "cursive");
@@ -666,7 +666,7 @@ class Page1 extends Component {
 		doc.text(15, 286.5, this.state.mainCompanyName);
 		//page15
 		doc.addPage();
-		doc.addImage(this.state.page15Image, "JPG", 0, 0, 210, 297);
+		doc.addImage(createImage(images[15]), "JPG", 0, 0, 210, 297);
 		doc.text(135, 250, this.state.signDate);
 		doc.setFont("Meddon", "cursive");
 		doc.setFontSize(16);
@@ -676,15 +676,15 @@ class Page1 extends Component {
 		doc.text(15, 286.5, this.state.mainCompanyName);
 		//page16
 		doc.addPage();
-		doc.addImage(this.state.page16Image, "JPG", 0, 0, 210, 297);
+		doc.addImage(createImage(images[16]), "JPG", 0, 0, 210, 297);
 		doc.text(15, 286.5, this.state.mainCompanyName);
 		//page17
 		doc.addPage();
-		doc.addImage(this.state.page17Image, "JPG", 0, 0, 210, 297);
+		doc.addImage(createImage(images[17]), "JPG", 0, 0, 210, 297);
 		doc.text(15, 286.5, this.state.mainCompanyName);
 		//page18
 		doc.addPage();
-		doc.addImage(this.state.page18Image, "JPG", 0, 0, 210, 297);
+		doc.addImage(createImage(images[18]), "JPG", 0, 0, 210, 297);
 		doc.setFont("Meddon", "cursive");
 		doc.setFontSize(16);
 		doc.text(30, 204.5, this.state.mainSignature);
@@ -694,7 +694,7 @@ class Page1 extends Component {
 		doc.text(15, 286.5, this.state.mainCompanyName);
 		//page19
 		doc.addPage();
-		doc.addImage(this.state.page19Image, "JPG", 0, 0, 210, 297);
+		doc.addImage(createImage(images[19]), "JPG", 0, 0, 210, 297);
 		doc.setFontSize(9);
 		doc.text(46, 102.5, this.state.mainCompanyName);
 		doc.setFontSize(16);
@@ -707,7 +707,7 @@ class Page1 extends Component {
 		doc.text(15, 286.5, this.state.mainCompanyName);
 		//page20
 		doc.addPage();
-		doc.addImage(this.state.page20Image, "JPG", 0, 0, 210, 297);
+		doc.addImage(createImage(images[20]), "JPG", 0, 0, 210, 297);
 		doc.text(135, 260, this.state.signDate);
 		doc.setFont("Meddon", "cursive");
 		doc.setFontSize(16);
@@ -717,7 +717,7 @@ class Page1 extends Component {
 		doc.text(15, 286.5, this.state.mainCompanyName);
 		//page21
 		doc.addPage();
-		doc.addImage(this.state.page21Image, "JPG", 0, 0, 210, 297);
+		doc.addImage(createImage(images[21]), "JPG", 0, 0, 210, 297);
 		doc.setFont("Meddon", "cursive");
 		doc.setFontSize(16);
 		doc.text(25, 129, this.state.mainSignature);
@@ -728,7 +728,7 @@ class Page1 extends Component {
 		doc.text(135, 265, this.state.signDate);
 		//page22
 		doc.addPage();
-		doc.addImage(this.state.page22Image, "JPG", 0, 0, 210, 297);
+		doc.addImage(createImage(images[22]), "JPG", 0, 0, 210, 297);
 		doc.text(37, 213.5, this.state.name);
 		doc.text(120, 213.5, this.state.socialNumber);
 		doc.text(30, 224, this.state.address);
@@ -746,7 +746,7 @@ class Page1 extends Component {
 		doc.text(15, 286.5, this.state.mainCompanyName);
 		//page23
 		doc.addPage();
-		doc.addImage(this.state.page23Image, "JPG", 0, 0, 210, 297);
+		doc.addImage(createImage(images[23]), "JPG", 0, 0, 210, 297);
 		doc.setFontSize(16);
 		doc.text(15, 220, this.state.name);
 		doc.setFont("Meddon", "cursive");
@@ -757,11 +757,11 @@ class Page1 extends Component {
 		doc.text(15, 286.5, this.state.mainCompanyName);
 		//page24
 		doc.addPage();
-		doc.addImage(this.state.page24Image, "JPG", 0, 0, 210, 297);
+		doc.addImage(createImage(images[24]), "JPG", 0, 0, 210, 297);
 		doc.text(15, 286.5, this.state.mainCompanyName);
 		//page25
 		doc.addPage();
-		doc.addImage(this.state.page25Image, "JPG", 0, 0, 210, 297);
+		doc.addImage(createImage(images[25]), "JPG", 0, 0, 210, 297);
 		doc.setFont("Meddon", "cursive");
 		doc.setFontSize(16);
 		doc.text(35, 40.8, this.state.mainSignature);
@@ -770,7 +770,7 @@ class Page1 extends Component {
 		doc.text(15, 286.5, this.state.mainCompanyName);
 		//page26
 		doc.addPage();
-		doc.addImage(this.state.page26Image, "JPG", 0, 0, 210, 297);
+		doc.addImage(createImage(images[26]), "JPG", 0, 0, 210, 297);
 		doc.setFont("Meddon", "cursive");
 		doc.setFontSize(16);
 		doc.text(35, 272.8, this.state.mainSignature);
@@ -786,14 +786,8 @@ class Page1 extends Component {
 	onChange = e => this.setState({[e.target.name]: e.target.value});
 	onChecked = (e, state) => this.setState({[e.target.name]: state});
 	componentDidMount() {
-    window.scrollTo(0, 0);
-  };
-	static createImage(src) {
-		const image = new Image();
-		image.src = src;
-
-		return image;
-	};
+    	window.scrollTo(0, 0);
+  	};
 	render() {
 		return (
 			<div className="container">
@@ -2933,5 +2927,27 @@ class Page1 extends Component {
 		);
 	}
 }
+
+/**
+ * Create a HTMLImageElement for jspdf library
+ * @param src
+ * @returns {HTMLImageElement}
+ */
+function createImage(src) {
+	const imageElement = new Image();
+	imageElement.src = src;
+
+	return imageElement;
+}
+
+/**
+ * Function to import all images from folder
+ * @param r
+ * @returns {*}
+ */
+function importAll(r) {
+	return r.keys().map(r);
+}
+
 
 export default Page1;
