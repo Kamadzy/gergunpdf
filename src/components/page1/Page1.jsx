@@ -5,14 +5,13 @@ import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import Checkbox from "@material-ui/core/Checkbox";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
-import w9Image from "./Driver-File-11.jpg";
+import w9Image from "./images/Driver-File-11.jpg";
 import "typeface-roboto";
 import jspdf from "jspdf";
 import "./page1.css";
 import imageStore from "./ImageStore";
 
 class Page1 extends Component {
-
 	constructor(props) {
 		super(props);
 
@@ -221,13 +220,13 @@ class Page1 extends Component {
 
 		};
 		this.state = {...imageStore, ...defaultState};
-	}
-
+	};
 	generatePdf = () => {
 		const doc = new jspdf();
 		doc.setFontSize(12);
 		doc.setTextColor("black");
 		//page0
+
 		doc.addImage(this.state.page0Image, "JPG", 0, 0, 210, 297);
 		doc.text(36, 31.1, this.state.name);
 		//page1
@@ -784,14 +783,17 @@ class Page1 extends Component {
 		doc.save("gergun-transportation.pdf");
 		//console.log(doc.output());
 	};
-
 	onChange = e => this.setState({[e.target.name]: e.target.value});
-  onChecked = (e, state) => this.setState({[e.target.name]: state});
-  
-  componentDidMount() {
+	onChecked = (e, state) => this.setState({[e.target.name]: state});
+	componentDidMount() {
     window.scrollTo(0, 0);
-  }
+  };
+	static createImage(src) {
+		const image = new Image();
+		image.src = src;
 
+		return image;
+	};
 	render() {
 		return (
 			<div className="container">
