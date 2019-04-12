@@ -549,7 +549,6 @@ class Page1 extends Component {
 		doc.text(74, 109, this.state.signDate);
 		doc.text(15, 285, this.state.mainCompanyName);
 		
-
 		//page4
 		doc.addPage();
 		doc.addImage(createImage(images[4]), "JPG", 0, 0, 210, 297);
@@ -570,9 +569,6 @@ class Page1 extends Component {
 		doc.text(120, 213, "Sacramento");
 		doc.text(184, 213, "CA");
 		doc.text(25,225,this.state.signDate);
-		
-
-
 
 		//page5
 		doc.addPage();
@@ -584,6 +580,7 @@ class Page1 extends Component {
 		doc.text(22, 54.5, this.state.city);
 		doc.text(124, 54.4, this.state.socialNumber);
 		doc.text(25.5, 106, "X");
+		doc.text(125, 140.4, this.state.signDate);
 		doc.text(15, 286, this.state.mainCompanyName);
 
 		//page6
