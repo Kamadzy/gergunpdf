@@ -556,9 +556,9 @@ class Page1 extends Component {
 		doc.text(15, 78.1, this.state.name);
 		doc.text(148, 78.1, this.state.driverLic);
 		doc.text(55, 87.1, this.state.mainCompanyName);
-		doc.text(42, 130.5, "5330 Madison Ave Suit F");
-		doc.text(120, 130.5, "Sacramento");
-		doc.text(184, 130.5, "CA");
+		doc.text(42, 131, "5330 Madison Ave Suit F");
+		doc.text(120, 131, "Sacramento");
+		doc.text(184, 131, "CA");
 		doc.text(25, 144, this.state.signDate);
 		doc.setFont("Meddon", "cursive");
 		doc.setFontSize(16);
@@ -566,6 +566,14 @@ class Page1 extends Component {
 		doc.setFont('helvetica', "normal");
 		doc.setFontSize(12);
 		doc.text(110, 155, this.state.mainCompanyName);
+		doc.text(42, 213, "5330 Madison Ave Suit F");
+		doc.text(120, 213, "Sacramento");
+		doc.text(184, 213, "CA");
+		doc.text(25,225,this.state.signDate);
+		
+
+
+
 		//page5
 		doc.addPage();
 		doc.addImage(createImage(images[5]), "JPG", 0, 0, 210, 297);
