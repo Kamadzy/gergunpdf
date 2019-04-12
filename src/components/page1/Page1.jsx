@@ -460,7 +460,7 @@ class Page1 extends Component {
 		doc.setFontSize(12);
 		doc.text(138, 269, this.state.signDate);
 
-		//page 3
+		//page 3-1
 		doc.addPage();
 		doc.addImage(createImage(images[3]), 'JPG', 0, 0, 210, 297);
 		doc.text(37.5, 26.5, this.state.name);
@@ -469,6 +469,48 @@ class Page1 extends Component {
 		doc.text(141, 33, this.state.stateIssue);
 		doc.text(20, 39.3, this.state.city);
 		doc.text(122, 39.3, this.state.socialNumber);
+		doc.text(10,54.7,this.state.emplname1)
+		doc.text(10, 59.8, this.state.empladdress1);
+		doc.text(10, 64.9, this.state.emplcity1);
+		doc.text(10, 70.5, this.state.emplconpers1);
+		doc.text(70, 70.5, this.state.emplphone1);
+		doc.text(116, 54, this.state.mainCompanyName);
+		doc.text(116, 60, "5330 Madison Ave Suit F, Sacramento CA 95841");
+		doc.text(18, 85, this.state.name);
+		doc.text(133, 85, this.state.mainCompanyName);
+
+		doc.setFont("Meddon", "cursive");
+		doc.setFontSize(16);
+		doc.text(10, 109, this.state.mainSignature);
+		doc.setFont('helvetica', "normal");
+		doc.setFontSize(12);
+		doc.text(74, 109, this.state.signDate);
+		//alcDrugQuestions
+		//убрать с 3 страницы чекбоксы и переместить их дальше
+		// doc.text(181, 134.5, this.state.alcDrugCheckQYes1 ? 'x' : '');
+		// doc.text(188, 134.5, this.state.alcDrugCheckQNo1 ? 'x' : '');
+		// doc.text(179.8, 156.1, this.state.alcDrugCheckQYes2 ? 'x' : '');
+		// doc.text(187.5, 156.1, this.state.alcDrugCheckQNo2 ? 'x' : '');
+		// doc.text(179.8, 160.8, this.state.alcDrugCheckQYes3 ? 'x' : '');
+		// doc.text(187.5, 160.8, this.state.alcDrugCheckQNo3 ? 'x' : '');
+		// doc.text(179.8, 164.8, this.state.alcDrugCheckQYes4 ? 'x' : '');
+		// doc.text(187.5, 164.8, this.state.alcDrugCheckQNo4 ? 'x' : '');
+		doc.text(15, 285, this.state.mainCompanyName);
+
+		//page 3-2
+		doc.addPage();
+		doc.addImage(createImage(images[3]), 'JPG', 0, 0, 210, 297);
+		doc.text(37.5, 26.5, this.state.name);
+		doc.text(139, 26.5, this.state.driverLic);
+		doc.text(29, 33, this.state.address);
+		doc.text(141, 33, this.state.stateIssue);
+		doc.text(20, 39.3, this.state.city);
+		doc.text(122, 39.3, this.state.socialNumber);
+		doc.text(10,54.7,this.state.emplname2)
+		doc.text(10, 59.8, this.state.empladdress2);
+		doc.text(10, 64.9, this.state.emplcity2);
+		doc.text(10, 70.5, this.state.emplconpers2);
+		doc.text(70, 70.5, this.state.emplphone2);
 		doc.text(116, 54, this.state.mainCompanyName);
 		doc.text(116, 60, "5330 Madison Ave Suit F, Sacramento CA 95841");
 		doc.text(18, 85, this.state.name);
@@ -479,22 +521,34 @@ class Page1 extends Component {
 		doc.setFont('helvetica', "normal");
 		doc.setFontSize(12);
 		doc.text(74, 109, this.state.signDate);
-		//alcDrugQuestions
-		doc.text(181, 134.5, this.state.alcDrugCheckQYes1 ? 'x' : '');
-		doc.text(188, 134.5, this.state.alcDrugCheckQNo1 ? 'x' : '');
-		doc.text(179.8, 156.1, this.state.alcDrugCheckQYes2 ? 'x' : '');
-		doc.text(187.5, 156.1, this.state.alcDrugCheckQNo2 ? 'x' : '');
-		doc.text(179.8, 160.8, this.state.alcDrugCheckQYes3 ? 'x' : '');
-		doc.text(187.5, 160.8, this.state.alcDrugCheckQNo3 ? 'x' : '');
-		doc.text(179.8, 164.8, this.state.alcDrugCheckQYes4 ? 'x' : '');
-		doc.text(187.5, 164.8, this.state.alcDrugCheckQNo4 ? 'x' : '');
+		doc.text(15, 285, this.state.mainCompanyName);
+
+		//page 3-3
+		doc.addPage();
+		doc.addImage(createImage(images[3]), 'JPG', 0, 0, 210, 297);
+		doc.text(37.5, 26.5, this.state.name);
+		doc.text(139, 26.5, this.state.driverLic);
+		doc.text(29, 33, this.state.address);
+		doc.text(141, 33, this.state.stateIssue);
+		doc.text(20, 39.3, this.state.city);
+		doc.text(122, 39.3, this.state.socialNumber);
+		doc.text(10,54.7,this.state.emplname3)
+		doc.text(10, 59.8, this.state.empladdress3);
+		doc.text(10, 64.9, this.state.emplcity3);
+		doc.text(10, 70.5, this.state.emplconpers3);
+		doc.text(70, 70.5, this.state.emplphone3);
+		doc.text(116, 54, this.state.mainCompanyName);
+		doc.text(116, 60, "5330 Madison Ave Suit F, Sacramento CA 95841");
+		doc.text(18, 85, this.state.name);
+		doc.text(133, 85, this.state.mainCompanyName);
 		doc.setFont("Meddon", "cursive");
 		doc.setFontSize(16);
-		doc.text(30, 264, this.state.mainSignature);
+		doc.text(10, 109, this.state.mainSignature);
 		doc.setFont('helvetica', "normal");
 		doc.setFontSize(12);
-		doc.text(133, 264, this.state.signDate);
+		doc.text(74, 109, this.state.signDate);
 		doc.text(15, 285, this.state.mainCompanyName);
+		
 
 		//page4
 		doc.addPage();
@@ -502,7 +556,7 @@ class Page1 extends Component {
 		doc.text(15, 78.1, this.state.name);
 		doc.text(148, 78.1, this.state.driverLic);
 		doc.text(55, 87.1, this.state.mainCompanyName);
-		doc.text(44, 130.5, "Madison Ave Suit F");
+		doc.text(42, 130.5, "5330 Madison Ave Suit F");
 		doc.text(120, 130.5, "Sacramento");
 		doc.text(184, 130.5, "CA");
 		doc.text(25, 144, this.state.signDate);
