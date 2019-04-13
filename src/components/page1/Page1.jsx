@@ -487,14 +487,7 @@ class Page1 extends Component {
 		doc.text(74, 109, this.state.signDate);
 		//alcDrugQuestions
 		//убрать с 3 страницы чекбоксы и переместить их дальше
-		// doc.text(181, 134.5, this.state.alcDrugCheckQYes1 ? 'x' : '');
-		// doc.text(188, 134.5, this.state.alcDrugCheckQNo1 ? 'x' : '');
-		// doc.text(179.8, 156.1, this.state.alcDrugCheckQYes2 ? 'x' : '');
-		// doc.text(187.5, 156.1, this.state.alcDrugCheckQNo2 ? 'x' : '');
-		// doc.text(179.8, 160.8, this.state.alcDrugCheckQYes3 ? 'x' : '');
-		// doc.text(187.5, 160.8, this.state.alcDrugCheckQNo3 ? 'x' : '');
-		// doc.text(179.8, 164.8, this.state.alcDrugCheckQYes4 ? 'x' : '');
-		// doc.text(187.5, 164.8, this.state.alcDrugCheckQNo4 ? 'x' : '');
+		
 		doc.text(15, 285, this.state.mainCompanyName);
 
 		//page 3-2
@@ -644,9 +637,15 @@ class Page1 extends Component {
 		doc.text(62, 76.2, this.state.stateIssue);
 		doc.text(45, 83, this.state.city);
 		doc.text(45, 91.5, this.state.socialNumber);
+		doc.text(179, 123.5, this.state.alcDrugCheckQYes2 ? 'x' : '');
 		doc.text(188.5, 123.5, this.state.alcDrugCheckQNo2 ? 'x' : '');
-		doc.text(190.5, 134.2, this.state.alcDrugCheckQNo3 ? 'x' : '');
-		doc.text(188.9, 144.7, this.state.alcDrugCheckQNo4 ? 'x' : '');
+		doc.text(180.5, 134.3, this.state.alcDrugCheckQYes3 ? 'x' : '');
+		doc.text(190.3, 134.3, this.state.alcDrugCheckQNo3 ? 'x' : '');
+		doc.text(179.3, 144.5, this.state.alcDrugCheckQYes4 ? 'x' : '');
+		doc.text(188.7, 144.5, this.state.alcDrugCheckQNo4 ? 'x' : '');
+
+
+
 		doc.setFont("Meddon", "cursive");
 		doc.setFontSize(16);
 		doc.text(45, 233.5, this.state.mainSignature);
