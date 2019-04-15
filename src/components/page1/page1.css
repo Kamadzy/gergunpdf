@@ -588,6 +588,15 @@
   width: 9%;
   border: none;
 }
+/* page 14 */
+.cargoTrainingHeadline h5 {
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 60px;
+}
+.cargo-check-boxes {
+  margin-left: 40px;
+}
 .mainBtn {
   position: relative !important;
   margin-bottom: 35px !important;

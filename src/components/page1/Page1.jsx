@@ -217,7 +217,17 @@ class Page1 extends Component {
 			w9AddressSec: "",
 			w9IdentfNumber: "",
 			w9Signature: "",
-			w9SignatureDate: ""
+			w9SignatureDate: "",
+			//page14
+			inspCargoCheck:false,
+			genSecCargoCheck:false,
+			perfCritCheck:false,
+			standartsSecuCheck:false,
+			secuPartCheck:false,
+			determWorkCheck:false,
+			determAggrCheck:false,
+			determMinNumbCheck:false,
+			frontStructCheck:false,
 
 		};
 	};
@@ -682,13 +692,11 @@ class Page1 extends Component {
 		doc.text(136.3, 61.8, this.state.w9TrustCheck ? 'x' : '');
 		doc.text(23, 71.4, this.state.w9Limited ? 'x' : '');
 		doc.text(23, 89.1,this.state.w9Other ? 'x' : '');
-		
 		doc.text(152, 58, this.state.w9ClassTax);
 		doc.text(27, 72.2, this.state.w9Address);
 		doc.text(27, 81.5, this.state.w9AddressSec);
 		doc.text(144.3,131.8,this.state.socialNumber,{charSpace: '2.8'});
 		doc.text(145, 149.8, this.state.w9IdentfNumber,{charSpace: '2.7'});
-	    
 		doc.setFont("Meddon", "cursive");
 		doc.setFontSize(16);
 		doc.text(52, 181, this.state.w9Signature);
@@ -716,6 +724,17 @@ class Page1 extends Component {
 		//page14
 		doc.addPage();
 		doc.addImage(createImage(images[14]), "JPG", 0, 0, 210, 297);
+		doc.text(11.4,104.6,this.state.inspCargoCheck ? 'X' : '');
+
+		//genSecCargoCheck
+		//perfCritCheck
+		//standartsSecuCheck
+		//secuPartCheck
+		//determWorkCheck
+		//determAggrCheck
+		//determMinNumbCheck
+		//frontStructCheck
+
 		doc.setFontSize(16);
 		doc.text(13, 210.3, this.state.name);
 		doc.setFont("Meddon", "cursive");
@@ -2861,6 +2880,131 @@ class Page1 extends Component {
 							</tr>
 							</tbody>
 						</table>
+					</div>
+					<div className="cargoTrainingAcknow">
+						<div className="cargoTrainingHeadline">
+							<h5>Cargo Training Acknowleledgement</h5>
+							<p>I have been trained and instructed on the regulations for inspection, tying down and securing cargo that <br/> went into effect January 1, 2004. The training included: </p>
+						</div>
+						<div className="cargo-check-boxes">
+							<div className="row insp-Cargo-Check">
+								<FormControlLabel
+									label="Inspecting cargo"
+									control={
+										<Checkbox
+											name="inspCargoCheck"
+											onChange={(e, state) => this.onChecked(e, state)}
+											color="primary"
+											className="inspCargoCheck"
+										/>
+									}
+								/>
+							</div>
+							<div className="row gen-Sec-Cargo-Check">
+								<FormControlLabel
+									label="General securing cargo standards"
+									control={
+										<Checkbox
+											name="genSecCargoCheck"
+											onChange={(e, state) => this.onChecked(e, state)}
+											color="primary"
+											className="genSecCargoCheck"
+										/>
+									}
+								/>
+							</div>
+							<div className="row perf-Crit-Check">
+								<FormControlLabel
+									label="Performance criteria of securing cargo system"
+									control={
+										<Checkbox
+											name="perfCritCheck"
+											onChange={(e, state) => this.onChecked(e, state)}
+											color="primary"
+											className="perfCritCheck"
+										/>
+									}
+								/>
+							</div>
+							<div className="row standarts-Secu-Check">
+								<FormControlLabel
+									label="Standards for securing cargo devices"
+									control={
+										<Checkbox
+											name="standartsSecuCheck"
+											onChange={(e, state) => this.onChecked(e, state)}
+											color="primary"
+											className="standartsSecuCheck"
+										/>
+									}
+								/>
+							</div>
+							<div className="row secu-Part-Check">
+								<FormControlLabel
+									label="Securing particular articles of cargo"
+									control={
+										<Checkbox
+											name="secuPartCheck"
+											onChange={(e, state) => this.onChecked(e, state)}
+											color="primary"
+											className="secuPartCheck"
+										/>
+									}
+								/>
+							</div>
+							<div className="row determ-Work-Check">
+								<FormControlLabel
+									label="Determining working load limits"
+									control={
+										<Checkbox
+											name="determWorkCheck"
+											onChange={(e, state) => this.onChecked(e, state)}
+											color="primary"
+											className="determWorkCheck"
+										/>
+									}
+								/>
+							</div>
+							<div className="row determ-Aggr-Check">
+								<FormControlLabel
+									label="Determining aggregate working load limits"
+									control={
+										<Checkbox
+											name="determAggrCheck"
+											onChange={(e, state) => this.onChecked(e, state)}
+											color="primary"
+											className="determAggrCheck"
+										/>
+									}
+								/>
+							</div>
+							<div className="row determ-Min-Numb-Check">
+								<FormControlLabel
+									label="Determining the minimum number of tie downs needed to secure cargo of different lengths and weight"
+									control={
+										<Checkbox
+											name="determMinNumbCheck"
+											onChange={(e, state) => this.onChecked(e, state)}
+											color="primary"
+											className="determMinNumbCheck"
+										/>
+									}
+								/>
+							</div>
+							<div className="row front-Struct-Check">
+								<FormControlLabel
+									label="Front-end structure requirements"
+									control={
+										<Checkbox
+											name="frontStructCheck"
+											onChange={(e, state) => this.onChecked(e, state)}
+											color="primary"
+											className="frontStructCheck"
+										/>
+									}
+								/>
+							</div>
+						</div>
 					</div>
 					<div className="w9DocSection">
 						<div className="w9DocHeadline">
