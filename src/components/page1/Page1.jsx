@@ -5,7 +5,7 @@ import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import Checkbox from "@material-ui/core/Checkbox";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
-import w9Image from "./images/Driver-File-11.jpg";
+import w9Image from "./images/w9-image.jpg";
 import "typeface-roboto";
 import jspdf from "jspdf";
 import "./page1.css";
@@ -206,13 +206,15 @@ class Page1 extends Component {
 			w9NameInput: "",
 			w9CompanyName: "",
 			w9IndividualCheck: false,
-			w9CorpCheck: false,
+			w9CcorpCheck: false,
+			w9ScorpCheck: false,
 			w9PartnershipCheck: false,
+			w9TrustCheck:false,
+			w9Limited:false,
+			w9Other:false,
 			w9ClassTax: "",
 			w9Address: "",
 			w9AddressSec: "",
-			//w9AccNumbers:"",
-			w9SocNumber: "",
 			w9IdentfNumber: "",
 			w9Signature: "",
 			w9SignatureDate: ""
@@ -485,9 +487,6 @@ class Page1 extends Component {
 		doc.setFont('helvetica', "normal");
 		doc.setFontSize(12);
 		doc.text(74, 109, this.state.signDate);
-		//alcDrugQuestions
-		//убрать с 3 страницы чекбоксы и переместить их дальше
-		
 		doc.text(15, 285, this.state.mainCompanyName);
 
 		//page 3-2
@@ -643,9 +642,6 @@ class Page1 extends Component {
 		doc.text(190.3, 134.3, this.state.alcDrugCheckQNo3 ? 'x' : '');
 		doc.text(179.3, 144.5, this.state.alcDrugCheckQYes4 ? 'x' : '');
 		doc.text(188.7, 144.5, this.state.alcDrugCheckQNo4 ? 'x' : '');
-
-
-
 		doc.setFont("Meddon", "cursive");
 		doc.setFontSize(16);
 		doc.text(45, 233.5, this.state.mainSignature);
@@ -679,14 +675,20 @@ class Page1 extends Component {
 		doc.addImage(createImage(images[11]), "JPG", 0, 0, 210, 297);
 		doc.text(25, 41, this.state.w9NameInput);
 		doc.text(25, 50, this.state.w9CompanyName);
-		doc.text(54.2, 54.5, this.state.w9IndividualCheck ? 'x' : '');
-		doc.text(92, 54.5, this.state.w9CorpCheck ? 'x' : '');
-		doc.text(114.5, 54.5, this.state.w9PartnershipCheck ? 'x' : '');
+		doc.text(23,62.4, this.state.w9IndividualCheck ? 'x' : '');
+		doc.text(62,61.8, this.state.w9CcorpCheck ? 'x' : '');
+		doc.text(87, 61.8, this.state.w9ScorpCheck ? 'x' : '');
+		doc.text(111.6,61.8, this.state.w9PartnershipCheck ? 'x' : '');
+		doc.text(136.3, 61.8, this.state.w9TrustCheck ? 'x' : '');
+		doc.text(23, 71.4, this.state.w9Limited ? 'x' : '');
+		doc.text(23, 89.1,this.state.w9Other ? 'x' : '');
+		
 		doc.text(152, 58, this.state.w9ClassTax);
 		doc.text(27, 72.2, this.state.w9Address);
 		doc.text(27, 81.5, this.state.w9AddressSec);
-		doc.text(153, 106.8, this.state.w9SocNumber);
-		doc.text(153, 122, this.state.w9IdentfNumber);
+		doc.text(144.3,131.8,this.state.socialNumber,{charSpace: '2.8'});
+		doc.text(145, 149.8, this.state.w9IdentfNumber,{charSpace: '2.7'});
+	    
 		doc.setFont("Meddon", "cursive");
 		doc.setFontSize(16);
 		doc.text(52, 181, this.state.w9Signature);
@@ -2889,17 +2891,40 @@ class Page1 extends Component {
 							/>
 
 							<Checkbox
-								name="w9CorpCheck"
+								name="w9CcorpCheck"
 								onChange={(e, state) => this.onChecked(e, state)}
 								color="primary"
-								className="w9CorpCheck"
+								className="w9CcorpCheck"
 							/>
-
+							<Checkbox
+								name="w9ScorpCheck"
+								onChange={(e, state) => this.onChecked(e, state)}
+								color="primary"
+								className="w9ScorpCheck"
+							/>
 							<Checkbox
 								name="w9PartnershipCheck"
 								onChange={(e, state) => this.onChecked(e, state)}
 								color="primary"
 								className="w9PartnershipCheck"
+							/>
+							<Checkbox
+								name="w9TrustCheck"
+								onChange={(e, state) => this.onChecked(e, state)}
+								color="primary"
+								className="w9TrustCheck"
+							/>
+							<Checkbox
+								name="w9Limited"
+								onChange={(e, state) => this.onChecked(e, state)}
+								color="primary"
+								className="w9Limited"
+							/>
+							<Checkbox
+								name="w9Other"
+								onChange={(e, state) => this.onChecked(e, state)}
+								color="primary"
+								className="w9Other"
 							/>
 
 							<InputBase
@@ -2925,26 +2950,10 @@ class Page1 extends Component {
 							/>
 							<MaskedInput
 								mask={value =>
-									value ? [/\d/, /\d/, /\d/, "-", /\d/, /\d/, "-", /\d/, /\d/, /\d/, /\d/] : []
-								}
-								id="w9SocNumber"
-								className="w9SocNumber"
-								placeholder=""
-								guide={true}
-								value={this.state.w9SocNumber}
-								name="w9SocNumber"
-								inputProps={{
-									maxLength: 9
-								}}
-								onChange={this.onChange}
-							/>
-							<MaskedInput
-								mask={value =>
 									value ? [/\d/, /\d/, "-", /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/] : []
 								}
 								id="w9IdentfNumber"
 								className="w9IdentfNumber"
-								placeholder=""
 								guide={true}
 								value={this.state.w9IdentfNumber}
 								name="w9IdentfNumber"

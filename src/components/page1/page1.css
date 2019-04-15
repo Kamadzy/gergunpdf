@@ -488,89 +488,101 @@
 }
 .w9NameInput {
   position: relative !important;
-  left: 190px;
-  top: -1013px;
+  left: 180px;
+  top: -1018px;
   background-color: #f2f2f2;
   height: 20px;
   width: 50%;
 }
 .w9CompanyName {
   position: relative !important;
-  left: -365px;
-  top: -978px;
+  left: -375px;
+  top: -983px;
   background-color: #f2f2f2;
   height: 20px;
   width: 50%;
 }
+/* check boxes w9 */
 .w9IndividualCheck {
   position: relative !important;
-  left: 295px;
-  top: -990px;
+  left: 158px;
+  top: -961px;
 }
-.w9CorpCheck {
+.w9CcorpCheck {
   position: relative !important;
-  left: 405px;
-  top: -990px;
+  left: 277px;
+  top: -961px;
+}
+.w9ScorpCheck {
+  position: relative !important;
+  left: 331px;
+  top: -961px;
 }
 .w9PartnershipCheck {
   position: relative !important;
-  left: 453px;
-  top: -990px;
+  left: 390px;
+  top: -961px;
+}
+.w9TrustCheck {
+  position: relative !important;
+  left: 440px;
+  top: -961px;
+}
+.w9Limited {
+  position: relative !important;
+  left: -82px;
+  top: -927px;
+}
+.w9Other {
+  position: relative !important;
+  left: -129px;
+  top: -859px;
 }
 .w9ClassTax {
   position: relative !important;
-  left: 578px;
-  top: -981px;
+  left: 343px;
+  top: -930px;
   background-color: #f2f2f2;
   height: 20px;
   width: 3.5%;
 }
 .w9Address {
   position: relative !important;
-  left: 2px;
-  top: -926px;
+  left: -198px;
+  top: -825px;
   background-color: #f2f2f2;
   height: 20px;
   width: 41%;
 }
 .w9AddressSec {
   position: relative !important;
-  left: -453px;
-  top: -891px;
+  left: 177px;
+  top: -830px;
   background-color: #f2f2f2;
   height: 20px;
   width: 41%;
 }
-.w9SocNumber {
-  position: relative !important;
-  left: 723px;
-  top: -830px;
-  background-color: #f2f2f2;
-  height: 20px;
-  width: 17.1%;
-  border: none;
-}
 .w9IdentfNumber {
   position: relative !important;
-  left: 533px;
-  top: -771px;
-  background-color: #f2f2f2;
-  height: 20px;
-  width: 17.1%;
-  border: none;
+  left: 230px;
+  top: -661px;
+  background-color: transparent;
+  height: 25px;
+  width: 10%;
+  border: 0.5px solid black;
 }
 .w9Signature {
   position: relative !important;
-  left: -93px;
-  top: -548px;
+  left: -305px;
+  top: -434px;
   background-color: #f2f2f2;
   height: 28px;
   width: 30%;
 }
 .w9SignatureDate {
   position: relative !important;
-  left: -14px;
-  top: -546px;
+  left: -222px;
+  top: -433px;
   background-color: #f2f2f2;
   height: 28px;
   width: 9%;
