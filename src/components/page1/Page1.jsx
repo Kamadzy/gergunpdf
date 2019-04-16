@@ -228,6 +228,12 @@ class Page1 extends Component {
 			determAggrCheck:false,
 			determMinNumbCheck:false,
 			frontStructCheck:false,
+			//page19
+			receiptAcknowCheck:false,
+			reviewInfoCheck:false,
+			requestCorrCheck:false,
+			rebutInfoCheck:false,
+
 
 		};
 	};
@@ -733,8 +739,6 @@ class Page1 extends Component {
 		doc.text(11.4, 169, this.state.determAggrCheck ? "X" : "");
 		doc.text(11.4, 179.5, this.state.determMinNumbCheck ? "X" : "");
 		doc.text(11.4, 190, this.state.frontStructCheck ? "X" : "");
-		
-
 		doc.setFontSize(16);
 		doc.text(13, 210.3, this.state.name);
 		doc.setFont("Meddon", "cursive");
@@ -774,6 +778,10 @@ class Page1 extends Component {
 		//page19
 		doc.addPage();
 		doc.addImage(createImage(images[19]), "JPG", 0, 0, 210, 297);
+		doc.text(10.2, 97, this.state.receiptAcknowCheck ? "X" : "");
+		doc.text(11.3, 138.8, this.state.reviewInfoCheck ? "X" : "");
+		doc.text(11.3, 154.4, this.state.requestCorrCheck ? "X" : "");
+		doc.text(11.3, 169.9, this.state.rebutInfoCheck ? "X": "");
 		doc.setFontSize(9);
 		doc.text(46, 102.5, this.state.mainCompanyName);
 		doc.setFontSize(16);
@@ -3004,6 +3012,67 @@ class Page1 extends Component {
 									}
 								/>
 							</div>
+						</div>
+					</div>
+					<div className="receipt-drivers">
+						<div className="receipt-headline">
+							<h5>Receipt of driver's rights</h5>
+						</div>
+						<div className="receipt-checkboxes">
+							<div className="row receipt-acknow">
+									<FormControlLabel
+										label="I acknowledge that Gergun Transportation INC has provided me with written instruction regarding my Rights defined in Part 391.23(i)-(j) of the Federal Motor Carrier Safety Regulations. I have reviewed these materials which include information on the following:"
+										control={
+											<Checkbox
+												name="receiptAcknowCheck"
+												onChange={(e, state) => this.onChecked(e, state)}
+												color="primary"
+												className="receiptAcknow"
+											/>
+										}
+									/>
+							</div>
+							<div className="inner-checkboxes">
+							<div className="row receipt-review-info">
+									<FormControlLabel
+										label="Right to Review Information - I have the right to review the information provided by my previous DOT-regulated employer(s)"
+										control={
+											<Checkbox
+												name="reviewInfoCheck"
+												onChange={(e, state) => this.onChecked(e, state)}
+												color="primary"
+												className="reviewInfoCheck"
+											/>
+										}
+									/>
+							</div>
+							<div className="row receipt-req-corr">
+									<FormControlLabel
+										label="Right to Request Corrections - I have the right to request corrections to information that my previous DOT-regulated employer(s) provides, which I believe contains errors"
+										control={
+											<Checkbox
+												name="requestCorrCheck"
+												onChange={(e, state) => this.onChecked(e, state)}
+												color="primary"
+												className="requestCorrCheck"
+											/>
+										}
+									/>
+							</div>
+							<div className="row receipt-rebut-info">
+									<FormControlLabel
+										label="Right to Rebut Information - I have the right to rebut the information provided by my previous DOT-regulated employer(s)"
+										control={
+											<Checkbox
+												name="rebutInfoCheck"
+												onChange={(e, state) => this.onChecked(e, state)}
+												color="primary"
+												className="rebutInfoCheck"
+											/>
+										}
+									/>
+							</div>
+						</div>
 						</div>
 					</div>
 					<div className="w9DocSection">

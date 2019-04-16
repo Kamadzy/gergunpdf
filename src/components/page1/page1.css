@@ -597,6 +597,18 @@
 .cargo-check-boxes {
   margin-left: 40px;
 }
+/* page 19 */
+.receipt-headline {
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 60px;
+}
+.receipt-checkboxes {
+  margin-left: 40px;
+}
+.inner-checkboxes {
+  margin-left: 40px;
+}
 .mainBtn {
   position: relative !important;
   margin-bottom: 35px !important;
