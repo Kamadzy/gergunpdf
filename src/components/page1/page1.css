@@ -609,6 +609,16 @@
 .inner-checkboxes {
   margin-left: 40px;
 }
+/* page 23 */
+.cdl-regul-headline h5 {
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 20px;
+}
+.cdl-regul-headline p {
+  margin-left: 20px;
+}
 .mainBtn {
   position: relative !important;
   margin-bottom: 35px !important;

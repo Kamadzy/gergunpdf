@@ -834,6 +834,20 @@ class Page1 extends Component {
 		//page23
 		doc.addPage();
 		doc.addImage(createImage(images[23]), "JPG", 0, 0, 210, 297);
+		// havingAlco
+		// beingUnderAlco
+		// beingUnderCont
+		// refuseTakeAlco
+		// leaveScene
+		// useVenicle
+		// driveSusp
+		// speedExc
+		// followClose
+		// violatTraffic
+		// causeFatal
+		// makingImprop
+
+
 		doc.setFontSize(16);
 		doc.text(15, 220, this.state.name);
 		doc.setFont("Meddon", "cursive");
@@ -3074,6 +3088,21 @@ class Page1 extends Component {
 							</div>
 						</div>
 						</div>
+					</div>
+					<div className="cdl-regul">
+						<div className="cdl-regul-headline">
+							<h5>Driver's Sertificate of training on the cdl regulations</h5>			
+							<p>The Commercial Driver's License, regulations define offenses that if committed can cause a driver's 
+								license to be suspended, revoked, cancelled or cause the driver to be disqualified from operating a 
+								commercial motor vehicle.
+							</p>
+							<p>
+								I have been trained and instucted on the DOT regulations and penalties that I am subject to if 
+								convicted of any of the following offenses while operating a commercial or non-comercial motor 
+								vehicle.
+							</p>
+						</div>				
+
 					</div>
 					<div className="w9DocSection">
 						<div className="w9DocHeadline">
