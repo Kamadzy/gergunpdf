@@ -725,15 +725,15 @@ class Page1 extends Component {
 		doc.addPage();
 		doc.addImage(createImage(images[14]), "JPG", 0, 0, 210, 297);
 		doc.text(11.4,104.6,this.state.inspCargoCheck ? 'X' : '');
-
-		//genSecCargoCheck
-		//perfCritCheck
-		//standartsSecuCheck
-		//secuPartCheck
-		//determWorkCheck
-		//determAggrCheck
-		//determMinNumbCheck
-		//frontStructCheck
+		doc.text(11.4, 116.4, this.state.genSecCargoCheck ? "X" : "");
+		doc.text(11.4, 126.7,this.state.perfCritCheck ? "X" : "");
+		doc.text(11.4, 137.1, this.state.standartsSecuCheck ? "X" : "");
+		doc.text(11.4, 147.7, this.state.secuPartCheck ? "X" : "");
+		doc.text(11.4, 158.3, this.state.determWorkCheck ? "X" : "");
+		doc.text(11.4, 169, this.state.determAggrCheck ? "X" : "");
+		doc.text(11.4, 179.5, this.state.determMinNumbCheck ? "X" : "");
+		doc.text(11.4, 190, this.state.frontStructCheck ? "X" : "");
+		
 
 		doc.setFontSize(16);
 		doc.text(13, 210.3, this.state.name);
