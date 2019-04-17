@@ -233,6 +233,20 @@ class Page1 extends Component {
 			reviewInfoCheck:false,
 			requestCorrCheck:false,
 			rebutInfoCheck:false,
+			//page23
+			havingAlco:false,
+			beingUnderAlco:false,
+			beingUnderCont:false,
+			refuseTakeAlco:false,
+			leaveScene:false,
+			useVenicle:false,
+			driveSusp:false,
+			speedExc:false,
+			followClose:false,
+			violatTraffic:false,
+			causeFatal:false,
+			makingImprop:false,
+
 
 
 		};
@@ -834,19 +848,18 @@ class Page1 extends Component {
 		//page23
 		doc.addPage();
 		doc.addImage(createImage(images[23]), "JPG", 0, 0, 210, 297);
-		// havingAlco
-		// beingUnderAlco
-		// beingUnderCont
-		// refuseTakeAlco
-		// leaveScene
-		// useVenicle
-		// driveSusp
-		// speedExc
-		// followClose
-		// violatTraffic
-		// causeFatal
-		// makingImprop
-
+		doc.text(11.5, 84, this.state.havingAlco ? "X" : "");
+		doc.text(11.5, 96, this.state.beingUnderAlco ? "X" : "");
+		doc.text(11.5, 106, this.state.beingUnderCont ? "X" : "");
+		doc.text(11.5, 117, this.state.refuseTakeAlco ? "X" : "");
+		doc.text(11.5, 127.5, this.state.leaveScene ? "X" : "");
+		doc.text(11.5, 137.5, this.state.useVenicle ? "X" : "");
+		doc.text(11.5, 148, this.state.driveSusp ? "X" : "");
+		doc.text(11.5, 158.5, this.state.speedExc ? "X" : "");
+		doc.text(11.5, 169, this.state.followClose ? "X" : "");
+		doc.text(11.5, 179.5, this.state.violatTraffic ? "X" : "");
+		doc.text(11.5, 190, this.state.causeFatal ? "X" : "");
+		doc.text(11.5, 200.5, this.state.makingImprop ? "X" : "");
 
 		doc.setFontSize(16);
 		doc.text(15, 220, this.state.name);
@@ -3102,7 +3115,164 @@ class Page1 extends Component {
 								vehicle.
 							</p>
 						</div>				
-
+						<div className="cdl-regul-checkboxs"> 
+							<div className="row ">
+									<FormControlLabel
+										label="Having an alcohol concentration of 0.04 or greater while operating a commercial vehicle"
+										control={
+											<Checkbox
+												name="havingAlco"
+												onChange={(e, state) => this.onChecked(e, state)}
+												color="primary"
+												className="havingAlco"
+											/>
+										}
+									/>
+							</div>
+							<div className="row ">
+									<FormControlLabel
+										label="Being under the influence of alcohol as by State law"
+										control={
+											<Checkbox
+												name="beingUnderAlco"
+												onChange={(e, state) => this.onChecked(e, state)}
+												color="primary"
+												className="beingUnderAlco"
+											/>
+										}
+									/>
+							</div>
+							<div className="row ">
+									<FormControlLabel
+										label="Being under the influence of a controlled substance"
+										control={
+											<Checkbox
+												name="beingUnderCont"
+												onChange={(e, state) => this.onChecked(e, state)}
+												color="primary"
+												className="beingUnderCont"
+											/>
+										}
+									/>
+							</div>
+							<div className="row ">
+									<FormControlLabel
+										label="Refusing to take an alcohol test as required by State law"
+										control={
+											<Checkbox
+												name="refuseTakeAlco"
+												onChange={(e, state) => this.onChecked(e, state)}
+												color="primary"
+												className="refuseTakeAlco"
+											/>
+										}
+									/>
+							</div>
+							<div className="row ">
+									<FormControlLabel
+										label="Leaving the scene of an accident"
+										control={
+											<Checkbox
+												name="leaveScene"
+												onChange={(e, state) => this.onChecked(e, state)}
+												color="primary"
+												className="leaveScene"
+											/>
+										}
+									/>
+							</div>
+							<div className="row ">
+									<FormControlLabel
+										label="Using a vehicle to commit a felony"
+										control={
+											<Checkbox
+												name="useVenicle"
+												onChange={(e, state) => this.onChecked(e, state)}
+												color="primary"
+												className="useVenicle"
+											/>
+										}
+									/>
+							</div>
+							<div className="row ">
+									<FormControlLabel
+										label="1.Driving with a suspended, cancelled or revoked CDL. 2.driving a commercial vehicle without a CDL"
+										control={
+											<Checkbox
+												name="driveSusp"
+												onChange={(e, state) => this.onChecked(e, state)}
+												color="primary"
+												className="driveSusp"
+											/>
+										}
+									/>
+							</div>
+							<div className="row ">
+									<FormControlLabel
+										label="1.Speeding excessively. 2.Driving recklessly"
+										control={
+											<Checkbox
+												name="speedExc"
+												onChange={(e, state) => this.onChecked(e, state)}
+												color="primary"
+												className="speedExc"
+											/>
+										}
+									/>
+							</div>
+							<div className="row ">
+									<FormControlLabel
+										label="1.Following too closely. 2.Driving a commercial vehicle without a proper class of commercial license"
+										control={
+											<Checkbox
+												name="followClose"
+												onChange={(e, state) => this.onChecked(e, state)}
+												color="primary"
+												className="followClose"
+											/>
+										}
+									/>
+							</div>
+							<div className="row ">
+									<FormControlLabel
+										label="Violating a traffic law arising in connection with a fatal accident"
+										control={
+											<Checkbox
+												name="violatTraffic"
+												onChange={(e, state) => this.onChecked(e, state)}
+												color="primary"
+												className="violatTraffic"
+											/>
+										}
+									/>
+							</div>
+							<div className="row ">
+									<FormControlLabel
+										label="Causing a fatality with a commercial vehicle"
+										control={
+											<Checkbox
+												name="causeFatal"
+												onChange={(e, state) => this.onChecked(e, state)}
+												color="primary"
+												className="causeFatal"
+											/>
+										}
+									/>
+							</div>
+							<div className="row ">
+									<FormControlLabel
+										label="Making improper or erratic lane changes"
+										control={
+											<Checkbox
+												name="makingImprop"
+												onChange={(e, state) => this.onChecked(e, state)}
+												color="primary"
+												className="makingImprop"
+											/>
+										}
+									/>
+							</div>
+						</div>
 					</div>
 					<div className="w9DocSection">
 						<div className="w9DocHeadline">
