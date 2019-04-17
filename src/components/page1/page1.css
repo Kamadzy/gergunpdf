@@ -622,6 +622,132 @@
 .cdl-regul-checkboxs {
   margin-left: 40px;
 }
+/* emergency form page */
+.emergency-form-headline h5 {
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 60px;
+}
+.emergency-form-main {
+  margin-left: 40px;
+}
+.em-name-row {
+  width: 90%;
+  margin-left: 2px !important;
+}
+.em-p-title {
+  margin-top: 30px;
+  text-decoration: underline;
+  font-weight: bold;
+}
+.em-main-name {
+  width: 40%;
+}
+.em-main-depart {
+  width: 40%;
+  margin-left: 30px !important;
+}
+.em-main-addr {
+  width: 75%;
+}
+.em-main-csz {
+  width: 75%;
+}
+.em-tel-row {
+  width: 90%;
+  margin-left: 2px !important;
+}
+.em-main-homet {
+  width: 40%;
+}
+.em-main-cell {
+  width: 40%;
+  margin-left: 30px !important;
+}
+/* emer1 */
+.emer-name1 {
+  width: 90%;
+  margin-left: 2px !important;
+}
+.emer-main-name1 {
+  width: 40%;
+}
+.emer-main-rel1 {
+  width: 40%;
+  margin-left: 30px !important;
+}
+.emer-main-addr1 {
+  width: 75%;
+}
+.emer-main-csz1 {
+  width: 75%;
+}
+.emer-tel1 {
+  width: 90%;
+  margin-left: 2px !important;
+}
+.emer-home-tel1 {
+  width: 40%;
+}
+.emer-cell1 {
+  width: 40%;
+  margin-left: 30px !important;
+}
+.emer-work1 {
+  width: 90%;
+  margin-left: 2px !important;
+}
+.emer-work-tel1 {
+  width: 40%;
+}
+.emer-empl1 {
+  width: 40%;
+  margin-left: 30px !important;
+}
+/* emer2 */
+.em-emer-cont2 {
+  margin-top: 40px;
+}
+.emer-name2 {
+  width: 90%;
+  margin-left: 2px !important;
+}
+.emer-main-name2 {
+  width: 40%;
+}
+.emer-main-rel2 {
+  width: 40%;
+  margin-left: 30px !important;
+}
+.emer-main-addr2 {
+  width: 75%;
+}
+.emer-main-csz2 {
+  width: 75%;
+}
+.emer-tel2 {
+  width: 90%;
+  margin-left: 2px !important;
+}
+.emer-home-tel2 {
+  width: 40%;
+}
+.emer-cell2 {
+  width: 40%;
+  margin-left: 30px !important;
+}
+.emer-work2 {
+  width: 90%;
+  margin-left: 2px !important;
+}
+.emer-work-tel2 {
+  width: 40%;
+}
+.emer-empl2 {
+  width: 40%;
+  margin-left: 30px !important;
+}
+
 .mainBtn {
   position: relative !important;
   margin-bottom: 35px !important;

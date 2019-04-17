@@ -246,6 +246,9 @@ class Page1 extends Component {
 			violatTraffic:false,
 			causeFatal:false,
 			makingImprop:false,
+			//emegnecy form
+			emMainName:"",
+			emDepart:"",
 
 
 
@@ -891,8 +894,8 @@ class Page1 extends Component {
 		doc.setFont('helvetica', "normal");
 		doc.setFontSize(12);
 		doc.text(130, 272.2, this.state.signDate);
-
 		doc.text(15, 286.5, this.state.mainCompanyName);
+		//page27
 
 		doc.save("gergun-transportation.pdf");
 		//console.log(doc.output());
@@ -3271,6 +3274,217 @@ class Page1 extends Component {
 											/>
 										}
 									/>
+							</div>
+						</div>
+					</div>
+					<div className="emergency-form">
+						<div className="emergency-form-headline">
+							<h5>employee emergency contact form</h5>
+						</div>
+						<div className="emergency-form-main">
+							<div className="em-name-row row">
+								<TextField
+									label="Name"
+									id="em-main-name"
+									className="em-main-name"
+									name="emMainName"
+									value={this.state.emMainName}
+									onChange={this.onChange}
+								/>
+								<TextField
+									label="Depatment"
+									id="em-main-depart"
+									className="em-main-depart"
+									name="emDepart"
+									value={this.state.emDepart}
+									onChange={this.onChange}
+								/>
+							</div>
+							<p className="em-p-title">Personal Contact Info:</p>
+							<TextField
+								label="Home Address"
+								id="em-main-addr"
+								className="em-main-addr"
+								name="emMainHomeAddr"
+								value={this.state.emMainHomeAddr}
+								onChange={this.onChange}
+							/>
+							<TextField
+								label="City, State, ZIP"
+								id="em-main-csz"
+								className="em-main-csz"
+								name="emMainCsz"
+								value={this.state.emMainCsz}
+								onChange={this.onChange}
+							/>
+							<div className="em-tel-row row">
+								<TextField
+									label="Home Telephone #"
+									id="em-main-homet"
+									className="em-main-homet"
+									name="emMainHomeTel"
+									value={this.state.emMainHomeTel}
+									onChange={this.onChange}
+								/>
+								<TextField
+									label="Cell #"
+									id="em-main-cell"
+									className="em-main-cell"
+									name="emMainCell"
+									value={this.state.emMailCell}
+									onChange={this.onChange}
+								/>
+							</div>
+							<p className="em-p-title">Emergency Contact Info:</p>
+							<div className="em-emer-cont1">
+								<div className="emer-name1 row">
+									<TextField
+										label="(1) Name"
+										id="emer-main-name1"
+										className="emer-main-name1"
+										name="emerMainName1"
+										value={this.state.emerMainName1}
+										onChange={this.onChange}
+									/>
+									<TextField
+										label="Relationship"
+										id="emer-main-rel1"
+										className="emer-main-rel1"
+										name="emerMainRel1"
+										value={this.state.emerMainRel1}
+										onChange={this.onChange}
+									/>
+									
+								</div>	
+								<TextField
+									label="Address"
+									id="emer-main-addr1"
+									className="emer-main-addr1"
+									name="emMainAddr1"
+									value={this.state.emMainAddr1}
+									onChange={this.onChange}
+								/>
+								<TextField
+									label="City, State, ZIP"
+									id="emer-main-csz1"
+									className="emer-main-csz1"
+									name="emerMainCsz1"
+									value={this.state.emerMainCsz1}
+									onChange={this.onChange}
+								/>	
+								<div className="emer-tel1 row">
+									<TextField
+										label="Home Telephone #"
+										id="emer-home-tel1"
+										className="emer-home-tel1"
+										name="emerHomeTel1"
+										value={this.state.emerHomeTel1}
+										onChange={this.onChange}
+									/>
+									<TextField
+										label="Cell #"
+										id="emer-cell1"
+										className="emer-cell1"
+										name="emerCell1"
+										value={this.state.emerCell1}
+										onChange={this.onChange}
+									/>
+									
+								</div>
+								<div className="emer-work1 row">
+									<TextField
+										label="Work Telephone #"
+										id="emer-work-tel1"
+										className="emer-work-tel1"
+										name="emerWorkTel1"
+										value={this.state.emerWorkTel1}
+										onChange={this.onChange}
+									/>
+									<TextField
+										label="Employer"
+										id="emer-empl1"
+										className="emer-empl1"
+										name="emerEmpl1"
+										value={this.state.emerEmpl1}
+										onChange={this.onChange}
+									/>
+									
+								</div>
+							</div>
+							<div className="em-emer-cont2">
+								<div className="emer-name2 row">
+									<TextField
+										label="(2) Name"
+										id="emer-main-name2"
+										className="emer-main-name2"
+										name="emerMainName2"
+										value={this.state.emerMainName2}
+										onChange={this.onChange}
+									/>
+									<TextField
+										label="Relationship"
+										id="emer-main-rel2"
+										className="emer-main-rel2"
+										name="emerMainRel2"
+										value={this.state.emerMainRel2}
+										onChange={this.onChange}
+									/>
+									
+								</div>	
+								<TextField
+									label="Address"
+									id="emer-main-addr2"
+									className="emer-main-addr2"
+									name="emMainAddr2"
+									value={this.state.emMainAddr2}
+									onChange={this.onChange}
+								/>
+								<TextField
+									label="City, State, ZIP"
+									id="emer-main-csz2"
+									className="emer-main-csz2"
+									name="emerMainCsz2"
+									value={this.state.emerMainCsz2}
+									onChange={this.onChange}
+								/>	
+								<div className="emer-tel2 row">
+									<TextField
+										label="Home Telephone #"
+										id="emer-home-tel2"
+										className="emer-home-tel2"
+										name="emerHomeTel2"
+										value={this.state.emerHomeTel2}
+										onChange={this.onChange}
+									/>
+									<TextField
+										label="Cell #"
+										id="emer-cell2"
+										className="emer-cell2"
+										name="emerCell2"
+										value={this.state.emerCell2}
+										onChange={this.onChange}
+									/>
+									
+								</div>
+								<div className="emer-work2 row">
+									<TextField
+										label="Work Telephone #"
+										id="emer-work-tel2"
+										className="emer-work-tel2"
+										name="emerWorkTel2"
+										value={this.state.emerWorkTel2}
+										onChange={this.onChange}
+									/>
+									<TextField
+										label="Employer"
+										id="emer-empl2"
+										className="emer-empl2"
+										name="emerEmpl2"
+										value={this.state.emerEmpl2}
+										onChange={this.onChange}
+									/>
+									
+								</div>
 							</div>
 						</div>
 					</div>
