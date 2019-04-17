@@ -390,6 +390,8 @@
 
 .page2-sign h5 {
   text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 .page2-sign p {
@@ -418,7 +420,8 @@
 .alcDrug-headline {
   text-align: center;
   margin-top: 60px;
-  font-weight: normal;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 .alcoDrug-ques1 p {
@@ -445,7 +448,8 @@
 .sertOfViolHeadline {
   text-align: center;
   margin-top: 60px;
-  font-weight: normal;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 .sertOfViol p {
@@ -474,9 +478,11 @@
   /* border-bottom: solid 1px grey !important; */
 }
 
-.w9DocHeadline {
+.w9DocHeadline h5 {
   text-align: center;
   margin-top: 60px;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 .w9Image {
@@ -591,6 +597,7 @@
 /* page 14 */
 .cargoTrainingHeadline h5 {
   text-transform: uppercase;
+  font-weight: bold;
   text-align: center;
   margin-top: 60px;
 }
@@ -598,8 +605,9 @@
   margin-left: 40px;
 }
 /* page 19 */
-.receipt-headline {
+.receipt-headline h5 {
   text-transform: uppercase;
+  font-weight: bold;
   text-align: center;
   margin-top: 60px;
 }
@@ -612,6 +620,7 @@
 /* page 23 */
 .cdl-regul-headline h5 {
   text-transform: uppercase;
+  font-weight: bold;
   text-align: center;
   margin-top: 60px;
   margin-bottom: 20px;
@@ -625,6 +634,7 @@
 /* emergency form page */
 .emergency-form-headline h5 {
   text-transform: uppercase;
+  font-weight: bold;
   text-align: center;
   margin-top: 60px;
 }
