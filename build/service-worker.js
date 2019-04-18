@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/gergunpdf/precache-manifest.acc49406a435502395562c6475ffba98.js"
+  "/gergunpdf/precache-manifest.560fcfc2d74a6c9468b3009eacc6b6bf.js"
 );
 
 workbox.clientsClaim();
