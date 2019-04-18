@@ -477,14 +477,13 @@
   border: none !important;
   /* border-bottom: solid 1px grey !important; */
 }
-
+/* w9 doc */
 .w9DocHeadline h5 {
   text-align: center;
   margin-top: 60px;
   text-transform: uppercase;
   font-weight: bold;
 }
-
 .w9Image {
   width: 80%;
   height: 50%;
@@ -787,8 +786,17 @@
   width: 80%;
 }
 
+.MainBtnDiv {
+  text-align: center;
+}
 .mainBtn {
+  width: 20%;
   position: relative !important;
   margin-bottom: 35px !important;
+}
+.mainCircProg {
   left: 40%;
+  width: 20%;
+  margin-bottom: 35px !important;
+  text-align: center;
 }

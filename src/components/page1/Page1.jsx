@@ -5,6 +5,7 @@ import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import Checkbox from "@material-ui/core/Checkbox";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
+import CircularProgress from "@material-ui/core/CircularProgress";
 import w9Image from "./images/w9-image.jpg";
 import "typeface-roboto";
 import jspdf from "jspdf";
@@ -279,8 +280,7 @@ class Page1 extends Component {
 			emerMedDenPhone:"",
 
 			emplEmerCheck:false,
-
-
+			loading:false
 		};
 	};
 	generatePdf = () => {
@@ -952,6 +952,10 @@ class Page1 extends Component {
 		doc.text(120, 245, this.state.signDate);
 
 		doc.save("gergun-transportation.pdf");
+		this.setState({ loading: true });
+    		setTimeout(() => {
+      	this.setState({ loading: false });
+   		}, 4000);
 		//console.log(doc.output());
 	};
 	onChange = e => this.setState({[e.target.name]: e.target.value});
@@ -960,6 +964,7 @@ class Page1 extends Component {
     	window.scrollTo(0, 0);
   	};
 	render() {
+		const {loading} = this.state;
 		return (
 			<div className="container">
 				<div className="page1-content">
@@ -2973,7 +2978,8 @@ class Page1 extends Component {
 							</tbody>
 						</table>
 					</div>
-					<div className="cargoTrainingAcknow">
+				</div>
+				<div className="cargoTrainingAcknow">
 						<div className="cargoTrainingHeadline">
 							<h5>Cargo Training Acknowleledgement</h5>
 							<p>I have been trained and instructed on the regulations for inspection, tying down and securing cargo that <br/> went into effect January 1, 2004. The training included: </p>
@@ -3714,13 +3720,23 @@ class Page1 extends Component {
 							/>
 						</div>
 					</div>
-				</div>
 
-				<Button variant="contained" size="large" color="primary" className="mainBtn"
+				{/* <Button variant="contained" size="large" color="primary" className="mainBtn"
 						onClick={() => this.generatePdf()}>
 					Submit Document
-				</Button>
-			</div>
+				</Button> */}
+				<div className="MainBtnDiv">
+					<span onClick={()=> this.generatePdf()} disabled={loading} color="primary" className="mainCircProg">
+						{loading && <CircularProgress/>}
+						{loading && <span />}
+						{!loading && (
+							<Button variant="contained" color="primary" size="large" className="mainBtn">
+								Submit Document
+							</Button>
+						)}
+					</span>
+				</div>	
+			</div>//main div
 		);
 	}
 }
