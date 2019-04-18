@@ -246,10 +246,39 @@ class Page1 extends Component {
 			violatTraffic:false,
 			causeFatal:false,
 			makingImprop:false,
-			//emegnecy form
+			//emegnecy form page 27
 			emMainName:"",
 			emDepart:"",
+			emHomeAddr:"",
+			emMainCsz:"",
+			emMainHomeTel:"",
+			emMainCell:"",
 
+			emerMainName1:"",
+			emerMainRel1:"",
+			emMainAddr1:"",
+			emerMainCsz1:"",
+			emerHomeTel1:"",
+			emerCell1:"",
+			emerWorkTel1:"",
+			emerEmpl1:"",
+
+			emerMainName2:"",
+			emerMainRel2:"",
+			emMainAddr2:"",
+			emerMainCsz2:"",
+			emerHomeTel2:"",
+			emerCell2:"",
+			emerWorkTel2:"",
+			emerEmpl2:"",
+
+			emerMedDocName:"",
+			emerMedDocPhone:"",
+
+			emerMedDenName:"",
+			emerMedDenPhone:"",
+
+			emplEmerCheck:false,
 
 
 		};
@@ -332,8 +361,6 @@ class Page1 extends Component {
 		doc.text(98.5, 194.5, this.state.tableDateFrom4);
 		doc.text(124, 194.5, this.state.tableDateTo4);
 		doc.text(148, 194.5, this.state.nOfM4);
-
-
 		doc.setFontSize(9.5);
 		let typeOf5 = doc.splitTextToSize(this.state.typeOf5, 45);
 		doc.text(54.5, 198, typeOf5);
@@ -371,7 +398,6 @@ class Page1 extends Component {
 		let accidentPers2 = doc.splitTextToSize(this.state.accidentPers2, 45);
 		doc.text(147, 246.5, accidentPers2);
 		doc.setFontSize(12);
-
 		doc.text(13, 255.5, this.state.accidentDate3);
 		doc.setFontSize(9.5);
 		let accidentNature3 = doc.splitTextToSize(this.state.accidentNature3, 45);
@@ -384,7 +410,6 @@ class Page1 extends Component {
 		doc.text(15, 286, this.state.mainCompanyName);
 
 		doc.addPage(); //PAGE 2
-
 		doc.addImage(createImage(images[2]), "PNG", 0, 0, 210, 297);
 		doc.text(182, 26, this.state.violCheck ? 'x' : '');
 		doc.text(13, 42.5, this.state.violatLoc1);
@@ -395,7 +420,6 @@ class Page1 extends Component {
 		let violatPenal1 = doc.splitTextToSize(this.state.violatPenal1, 35);
 		doc.text(157.5, 38.7, violatPenal1);
 		doc.setFontSize(12);
-
 		doc.text(13, 49.5, this.state.violatLoc2);
 		doc.text(90.5, 49.5, this.state.violatDate2);
 		doc.setFontSize(9.5);
@@ -404,7 +428,6 @@ class Page1 extends Component {
 		let violatPenal2 = doc.splitTextToSize(this.state.violatPenal2, 35);
 		doc.text(158, 46, violatPenal2);
 		doc.setFontSize(12);
-
 		doc.text(13, 56.5, this.state.violatLoc3);
 		doc.text(90.5, 56.5, this.state.violatDate3);
 		doc.setFontSize(9.5);
@@ -413,7 +436,6 @@ class Page1 extends Component {
 		let violatPenal3 = doc.splitTextToSize(this.state.violatPenal3, 35);
 		doc.text(157, 52.5, violatPenal3);
 		doc.setFontSize(12);
-
 		doc.text(13, 63, this.state.violatLoc4);
 		doc.text(90.5, 63, this.state.violatDate4);
 		doc.setFontSize(9.5);
@@ -476,25 +498,20 @@ class Page1 extends Component {
 		let emplPosHeld3 = doc.splitTextToSize(this.state.emplPosHeld3, 35);
 		doc.text(153, 208, emplPosHeld3);
 		doc.setFontSize(12);
-
 		doc.text(133, 218.3, this.state.emplSalary3);
 		doc.text(161, 218.3, this.state.emplReasLeave3);
 		doc.text(133, 228.5, this.state.emplDrug3);
-
 		doc.text(15, 286, this.state.mainCompanyName);
-
 		// setting main signature font
 		doc.addFileToVFS("Meddon.ttf", SignatureFont);
 		doc.addFont("Meddon.ttf", "Meddon", "cursive");
 		doc.setFont("Meddon", "cursive");
 		doc.setFontSize(17);
 		doc.text(25, 269, this.state.mainSignature);
-
 		//switching back to normal font
 		doc.setFont('helvetica', "normal");
 		doc.setFontSize(12);
 		doc.text(138, 269, this.state.signDate);
-
 		//page 3-1
 		doc.addPage();
 		doc.addImage(createImage(images[3]), 'JPG', 0, 0, 210, 297);
@@ -513,7 +530,6 @@ class Page1 extends Component {
 		doc.text(116, 60, "5330 Madison Ave Suit F, Sacramento CA 95841");
 		doc.text(18, 85, this.state.name);
 		doc.text(133, 85, this.state.mainCompanyName);
-
 		doc.setFont("Meddon", "cursive");
 		doc.setFontSize(16);
 		doc.text(10, 109, this.state.mainSignature);
@@ -521,7 +537,6 @@ class Page1 extends Component {
 		doc.setFontSize(12);
 		doc.text(74, 109, this.state.signDate);
 		doc.text(15, 285, this.state.mainCompanyName);
-
 		//page 3-2
 		doc.addPage();
 		doc.addImage(createImage(images[3]), 'JPG', 0, 0, 210, 297);
@@ -547,7 +562,6 @@ class Page1 extends Component {
 		doc.setFontSize(12);
 		doc.text(74, 109, this.state.signDate);
 		doc.text(15, 285, this.state.mainCompanyName);
-
 		//page 3-3
 		doc.addPage();
 		doc.addImage(createImage(images[3]), 'JPG', 0, 0, 210, 297);
@@ -573,7 +587,6 @@ class Page1 extends Component {
 		doc.setFontSize(12);
 		doc.text(74, 109, this.state.signDate);
 		doc.text(15, 285, this.state.mainCompanyName);
-		
 		//page4
 		doc.addPage();
 		doc.addImage(createImage(images[4]), "JPG", 0, 0, 210, 297);
@@ -594,7 +607,6 @@ class Page1 extends Component {
 		doc.text(120, 213, "Sacramento");
 		doc.text(184, 213, "CA");
 		doc.text(25,225,this.state.signDate);
-
 		//page5
 		doc.addPage();
 		doc.addImage(createImage(images[5]), "JPG", 0, 0, 210, 297);
@@ -896,6 +908,48 @@ class Page1 extends Component {
 		doc.text(130, 272.2, this.state.signDate);
 		doc.text(15, 286.5, this.state.mainCompanyName);
 		//page27
+		doc.addPage();
+		doc.addImage(createImage(images[27]), "JPG", 0, 0, 210, 297);
+		doc.text(42, 48.4, this.state.emMainName);
+		doc.text(50, 56.4, this.state.emDepart);
+		doc.text(55, 72.3, this.state.emHomeAddr);
+		doc.text(56, 80.4, this.state.emMainCsz);
+		doc.text(60.5, 88.3, this.state.emMainHomeTel);
+		doc.text(120,88.3, this.state.emMainCell);
+
+		doc.text(46, 108.1, this.state.emerMainName1);
+		doc.text(132.5, 108.1, this.state.emerMainRel1);
+		doc.text(45, 116.3, this.state.emMainAddr1);
+		doc.text(55, 124.3, this.state.emerMainCsz1)
+		doc.text(60, 132.3, this.state.emerHomeTel1)
+		doc.text(120, 132.3, this.state.emerCell1)
+		doc.text(60, 140.1, this.state.emerWorkTel1)
+		doc.text(130, 140.1, this.state.emerEmpl1);
+
+		doc.text(46, 152.1, this.state.emerMainName2);
+		doc.text(132.5, 152.1, this.state.emerMainRel2);
+		doc.text(45, 160.3, this.state.emMainAddr2);
+		doc.text(55, 168.3, this.state.emerMainCsz2);
+		doc.text(60, 176.1, this.state.emerHomeTel2);
+		doc.text(120, 176.1, this.state.emerCell2);
+		doc.text(60, 184.1, this.state.emerWorkTel2)
+		doc.text(130, 184.1, this.state.emerEmpl2);
+
+		doc.text(53, 204.1, this.state.emerMedDocName);
+		doc.text(132,204.1, this.state.emerMedDocPhone);
+		
+		doc.text(53, 212.2, this.state.emerMedDenName);
+		doc.text(132, 212.2, this.state.emerMedDenPhone)
+		
+		doc.text(31.3, 224.6, this.state.emplEmerCheck ? "x" : "");
+		doc.setFontSize(8);
+		doc.text(138, 224.6, this.state.mainCompanyName);
+		doc.setFontSize(13);
+		doc.setFont("Meddon", "cursive");
+		doc.text(60, 245, this.state.mainSignature);
+		doc.setFont('helvetica', "normal");
+		doc.setFontSize(12);
+		doc.text(120, 245, this.state.signDate);
 
 		doc.save("gergun-transportation.pdf");
 		//console.log(doc.output());
@@ -3485,6 +3539,56 @@ class Page1 extends Component {
 									/>
 									
 								</div>
+							</div>
+							<p className="em-p-title">Medical Contact Info:</p>
+							<div className="emer-medical-doc row">
+									<TextField
+										label="Doctor Name"
+										id="emer-med-doc-name"
+										className="emer-med-doc-name"
+										name="emerMedDocName"
+										value={this.state.emerMedDocName}
+										onChange={this.onChange}
+									/>
+									<TextField
+										label="Phone #"
+										id="emer-med-doc-phone"
+										className="emer-med-doc-phone"
+										name="emerMedDocPhone"
+										value={this.state.emerMedDocPhone}
+										onChange={this.onChange}
+									/>
+							</div>
+							<div className="emer-medical-den row">
+									<TextField
+										label="Dentist Name"
+										id="emer-med-den-name"
+										className="emer-med-den-name"
+										name="emerMedDenName"
+										value={this.state.emerMedDenName}
+										onChange={this.onChange}
+									/>
+									<TextField
+										label="Phone #"
+										id="emer-med-den-phone"
+										className="emer-med-den-phone"
+										name="emerMedDenPhone"
+										value={this.state.emerMedDenPhone}
+										onChange={this.onChange}
+									/>
+							</div>
+							<div className="empl-emer-check">
+								<FormControlLabel
+											label="I have voluntarily provided the above contact information and authorize Gergun Transportation INC and its representatives to cantact any of the above on my behalf in the event "
+											control={
+												<Checkbox
+													name="emplEmerCheck"
+													onChange={(e, state) => this.onChecked(e, state)}
+													color="primary"
+													className="emplEmerCheck"
+												/>
+											}
+										/>
 							</div>
 						</div>
 					</div>

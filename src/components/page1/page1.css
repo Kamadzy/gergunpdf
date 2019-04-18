@@ -632,6 +632,9 @@
   margin-left: 40px;
 }
 /* emergency form page */
+.emergency-form {
+  margin-bottom: 70px;
+}
 .emergency-form-headline h5 {
   text-transform: uppercase;
   font-weight: bold;
@@ -756,6 +759,32 @@
 .emer-empl2 {
   width: 40%;
   margin-left: 30px !important;
+}
+.emer-medical-doc {
+  width: 90%;
+  margin-left: 2px !important;
+}
+.emer-med-doc-name {
+  width: 40%;
+}
+.emer-med-doc-phone {
+  width: 40%;
+  margin-left: 30px !important;
+}
+.emer-medical-den {
+  width: 90%;
+  margin-left: 2px !important;
+}
+.emer-med-den-name {
+  width: 40%;
+}
+.emer-med-den-phone {
+  width: 40%;
+  margin-left: 30px !important;
+}
+.empl-emer-check {
+  margin-top: 20px;
+  width: 80%;
 }
 
 .mainBtn {
