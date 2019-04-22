@@ -521,7 +521,7 @@ class Page1 extends Component {
 		doc.text(141, 33, this.state.stateIssue);
 		doc.text(20, 39.3, this.state.city);
 		doc.text(122, 39.3, this.state.socialNumber);
-		doc.text(10,54.7,this.state.emplname1)
+		doc.text(10,54.7,this.state.emplname1);
 		doc.text(10, 59.8, this.state.empladdress1);
 		doc.text(10, 64.9, this.state.emplcity1);
 		doc.text(10, 70.5, this.state.emplconpers1);
@@ -546,7 +546,7 @@ class Page1 extends Component {
 		doc.text(141, 33, this.state.stateIssue);
 		doc.text(20, 39.3, this.state.city);
 		doc.text(122, 39.3, this.state.socialNumber);
-		doc.text(10,54.7,this.state.emplname2)
+		doc.text(10,54.7,this.state.emplname2);
 		doc.text(10, 59.8, this.state.empladdress2);
 		doc.text(10, 64.9, this.state.emplcity2);
 		doc.text(10, 70.5, this.state.emplconpers2);
@@ -571,7 +571,7 @@ class Page1 extends Component {
 		doc.text(141, 33, this.state.stateIssue);
 		doc.text(20, 39.3, this.state.city);
 		doc.text(122, 39.3, this.state.socialNumber);
-		doc.text(10,54.7,this.state.emplname3)
+		doc.text(10,54.7,this.state.emplname3);
 		doc.text(10, 59.8, this.state.empladdress3);
 		doc.text(10, 64.9, this.state.emplcity3);
 		doc.text(10, 70.5, this.state.emplconpers3);
@@ -920,10 +920,10 @@ class Page1 extends Component {
 		doc.text(46, 108.1, this.state.emerMainName1);
 		doc.text(132.5, 108.1, this.state.emerMainRel1);
 		doc.text(45, 116.3, this.state.emMainAddr1);
-		doc.text(55, 124.3, this.state.emerMainCsz1)
-		doc.text(60, 132.3, this.state.emerHomeTel1)
-		doc.text(120, 132.3, this.state.emerCell1)
-		doc.text(60, 140.1, this.state.emerWorkTel1)
+		doc.text(55, 124.3, this.state.emerMainCsz1);
+		doc.text(60, 132.3, this.state.emerHomeTel1);
+		doc.text(120, 132.3, this.state.emerCell1);
+		doc.text(60, 140.1, this.state.emerWorkTel1);
 		doc.text(130, 140.1, this.state.emerEmpl1);
 
 		doc.text(46, 152.1, this.state.emerMainName2);
@@ -932,14 +932,14 @@ class Page1 extends Component {
 		doc.text(55, 168.3, this.state.emerMainCsz2);
 		doc.text(60, 176.1, this.state.emerHomeTel2);
 		doc.text(120, 176.1, this.state.emerCell2);
-		doc.text(60, 184.1, this.state.emerWorkTel2)
+		doc.text(60, 184.1, this.state.emerWorkTel2);
 		doc.text(130, 184.1, this.state.emerEmpl2);
 
 		doc.text(53, 204.1, this.state.emerMedDocName);
 		doc.text(132,204.1, this.state.emerMedDocPhone);
 		
 		doc.text(53, 212.2, this.state.emerMedDenName);
-		doc.text(132, 212.2, this.state.emerMedDenPhone)
+		doc.text(132, 212.2, this.state.emerMedDenPhone);
 		
 		doc.text(31.3, 224.6, this.state.emplEmerCheck ? "x" : "");
 		doc.setFontSize(8);
@@ -951,12 +951,19 @@ class Page1 extends Component {
 		doc.setFontSize(12);
 		doc.text(120, 245, this.state.signDate);
 
-		doc.save("gergun-transportation.pdf");
+		// doc.save("gergun-transportation.pdf");
 		this.setState({ loading: true });
-    		setTimeout(() => {
-      	this.setState({ loading: false });
+		setTimeout(() => {
+			this.setState({ loading: false });
    		}, 4000);
-		//console.log(doc.output());
+		this.sendPdf(doc.output('blob'));
+	};
+	sendPdf(blob) {
+		const formData = new FormData();
+		formData.append('file', blob, 'document.pdf');
+		const xhr = new XMLHttpRequest();
+		xhr.open('POST', '/sendmail.php', true);
+		xhr.send(formData);
 	};
 	onChange = e => this.setState({[e.target.name]: e.target.value});
 	onChecked = (e, state) => this.setState({[e.target.name]: state});
@@ -3761,6 +3768,5 @@ function createImage(src) {
 function importAll(r) {
 	return r.keys().map(r);
 }
-
 
 export default Page1;
