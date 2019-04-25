@@ -12,9 +12,9 @@ export default function LandingPage() {
         <header className="large">
           <nav id="menu" className="navbar navbar-expand-sm navbar-light">
             <div className="container">
-              <a href="index.html">
+              <Link to="/">
                 <img src={main_logo} className="logo" alt="Company logo" />
-              </a>
+              </Link>
               <button
                 className="navbar-toggler"
                 data-toggle="collapse"
@@ -25,9 +25,9 @@ export default function LandingPage() {
               <div className="collapse navbar-collapse" id="navbarCollapse">
                 <ul className="navbar-nav ml-auto">
                   <li className="nav-item">
-                    <a href="index.html" className="nav-link">
+                    <Link to="/" className="nav-link">
                       Home
-                    </a>
+                    </Link>
                   </li>
                   <li className="nav-item">
                     <a href="#about-us" className="nav-link">
@@ -40,9 +40,9 @@ export default function LandingPage() {
                     </a>
                   </li>
                   <li className="nav-item">
-                    <a href="quote.html#quote-section" className="nav-link">
+                    <Link to="/quote" className="nav-link">
                       Get a Quote
-                    </a>
+                    </Link>
                   </li>
                   <li className="nav-item">
                     <a href="#contact-section" className="nav-link">
@@ -137,7 +137,7 @@ export default function LandingPage() {
             </div>
             <div className="row">
               <div className="quote-btn p-4 mx-auto">
-                <Link to="/quote" className="btn btn-primary btn-lg">
+                <Link to="/quote#quote-section" className="btn btn-primary btn-lg">
                   Get a Quote
                 </Link>
               </div>

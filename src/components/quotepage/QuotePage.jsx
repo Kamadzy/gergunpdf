@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import main_logo from "../landingpage/img/main_logo.jpg";
 import "../landingpage/landingPage.css";
 
@@ -8,9 +9,9 @@ export default function Quote() {
       <header className="large">
         <nav id="menu" className="navbar navbar-expand-sm navbar-light">
           <div className="container">
-            <a href="index.html">
+            <Link to="/">
               <img src={main_logo} className="logo" alt="Company logo" />
-            </a>
+            </Link>
             <button className="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
               <span className="navbar-toggler-icon" />
             </button>
@@ -18,34 +19,34 @@ export default function Quote() {
             <div className="collapse navbar-collapse" id="navbarCollapse">
               <ul className="navbar-nav ml-auto">
                 <li className="nav-item">
-                  <a href="index.html#home" className="nav-link">
+                  <Link to="/" className="nav-link">
                     Home
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a href="index.html#about-us" className="nav-link">
+                  <Link to="/" className="nav-link">
                     About Us
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a href="index.html#services" className="nav-link">
+                  <Link to="/" className="nav-link">
                     Services
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a href="#quote-section" className="nav-link">
+                  <Link to="/quote" className="nav-link">
                     Get a Quote
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a href="index.html#contact-section" className="nav-link">
+                  <Link to="/" className="nav-link">
                     Contact
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a href="index.html#cdriver-appl" className="nav-link">
-                    Driver Application
-                  </a>
+                  <Link to="/driver-application" className="nav-link">
+                    Fill Driver Application
+                  </Link>
                 </li>
               </ul>
             </div>
