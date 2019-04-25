@@ -543,33 +543,57 @@
   left: -129px;
   top: -859px;
 }
+.w9OtherInput {
+  position: relative !important;
+  left: -225px;
+  top: -859px;
+  background-color: #f2f2f2;
+  height: 19px;
+  width: 38.5%;
+}
+.w9PayeeCode {
+  position: relative !important;
+  left: 529px;
+  top: -946px;
+  background-color: #f2f2f2;
+  height: 19px;
+  width: 4.5%;
+}
+.w9Fatca {
+  position: relative !important;
+  left: 425px;
+  top: -893px;
+  background-color: #f2f2f2;
+  height: 17px;
+  width: 9.5%;
+}
 .w9ClassTax {
   position: relative !important;
-  left: 343px;
+  left: 188px;
   top: -930px;
   background-color: #f2f2f2;
   height: 20px;
-  width: 3.5%;
+  width: 4%;
 }
 .w9Address {
   position: relative !important;
-  left: -198px;
-  top: -825px;
+  left: 180px;
+  top: -863px;
   background-color: #f2f2f2;
   height: 20px;
   width: 41%;
 }
 .w9AddressSec {
   position: relative !important;
-  left: 177px;
-  top: -830px;
+  left: -274px;
+  top: -829px;
   background-color: #f2f2f2;
   height: 20px;
   width: 41%;
 }
 .w9IdentfNumber {
   position: relative !important;
-  left: 230px;
+  left: -224px;
   top: -661px;
   background-color: transparent;
   height: 25px;
@@ -578,16 +602,16 @@
 }
 .w9Signature {
   position: relative !important;
-  left: -305px;
-  top: -434px;
+  left: 260px;
+  top: -458px;
   background-color: #f2f2f2;
   height: 28px;
   width: 30%;
 }
 .w9SignatureDate {
   position: relative !important;
-  left: -222px;
-  top: -433px;
+  left: 344px;
+  top: -457px;
   background-color: #f2f2f2;
   height: 28px;
   width: 9%;

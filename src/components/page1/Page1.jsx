@@ -213,6 +213,9 @@ class Page1 extends Component {
 			w9TrustCheck:false,
 			w9Limited:false,
 			w9Other:false,
+			w9OtherInput:"",
+			w9PayeeCode:"",
+			w9Fatca:"",
 			w9ClassTax: "",
 			w9Address: "",
 			w9AddressSec: "",
@@ -426,7 +429,7 @@ class Page1 extends Component {
 		let violatCharge2 = doc.splitTextToSize(this.state.violatCharge2, 35);
 		doc.text(123.5, 46, violatCharge2);
 		let violatPenal2 = doc.splitTextToSize(this.state.violatPenal2, 35);
-		doc.text(158, 46, violatPenal2);
+		doc.text(157.5, 46, violatPenal2);
 		doc.setFontSize(12);
 		doc.text(13, 56.5, this.state.violatLoc3);
 		doc.text(90.5, 56.5, this.state.violatDate3);
@@ -718,8 +721,8 @@ class Page1 extends Component {
 		//page11-w9
 		doc.addPage();
 		doc.addImage(createImage(images[11]), "JPG", 0, 0, 210, 297);
-		doc.text(25, 41, this.state.w9NameInput);
-		doc.text(25, 50, this.state.w9CompanyName);
+		doc.text(25, 39.3, this.state.w9NameInput);
+		doc.text(25, 48.3, this.state.w9CompanyName);
 		doc.text(23,62.4, this.state.w9IndividualCheck ? 'x' : '');
 		doc.text(62,61.8, this.state.w9CcorpCheck ? 'x' : '');
 		doc.text(87, 61.8, this.state.w9ScorpCheck ? 'x' : '');
@@ -727,17 +730,20 @@ class Page1 extends Component {
 		doc.text(136.3, 61.8, this.state.w9TrustCheck ? 'x' : '');
 		doc.text(23, 71.4, this.state.w9Limited ? 'x' : '');
 		doc.text(23, 89.1,this.state.w9Other ? 'x' : '');
-		doc.text(152, 58, this.state.w9ClassTax);
-		doc.text(27, 72.2, this.state.w9Address);
-		doc.text(27, 81.5, this.state.w9AddressSec);
+		doc.text(55,89.1, this.state.w9OtherInput);
+		doc.text(186.5, 67, this.state.w9PayeeCode);
+		doc.text(172.5, 80.3,this.state.w9Fatca);
+		doc.text(141.5, 71, this.state.w9ClassTax);
+		doc.text(25, 98, this.state.w9Address);
+		doc.text(25, 107, this.state.w9AddressSec);
 		doc.text(144.3,131.8,this.state.socialNumber,{charSpace: '2.8'});
 		doc.text(145, 149.8, this.state.w9IdentfNumber,{charSpace: '2.7'});
 		doc.setFont("Meddon", "cursive");
 		doc.setFontSize(16);
-		doc.text(52, 181, this.state.w9Signature);
+		doc.text(43, 210, this.state.w9Signature,{charSpace: '0'});
 		doc.setFont('helvetica', "normal");
 		doc.setFontSize(12);
-		doc.text(149, 181.5, this.state.w9SignatureDate);
+		doc.text(144, 210, this.state.w9SignatureDate);
 		//page12
 		doc.addPage();
 		doc.addImage(createImage(images[12]), "JPG", 0, 0, 210, 297);
@@ -951,7 +957,7 @@ class Page1 extends Component {
 		doc.setFontSize(12);
 		doc.text(120, 245, this.state.signDate);
 
-		// doc.save("gergun-transportation.pdf");
+		doc.save("gergun-transportation.pdf");
 		this.setState({ loading: true });
 		setTimeout(() => {
 			this.setState({ loading: false });
@@ -1038,11 +1044,8 @@ class Page1 extends Component {
 							id="state"
 							className="state"
 							helperText="STATE"
-							// inputProps={{
-							//   maxLength: 2
-							// }}
-							onInput={(e) => {
-								e.target.value = Math.max(0, parseInt(e.target.value)).toString().slice(0, 2)
+							inputProps={{
+							  maxLength: 2
 							}}
 							name="state"
 							value={this.state.state}
@@ -2063,7 +2066,7 @@ class Page1 extends Component {
 						<h5>EMPLOYMENT RECORD</h5>
 						<p>
 							Dot Requires That Employment for at Least 3 Years and/or Commercial Driving Experience
-							for the Past 10 Years Be Shown <br/> Please list the most recent employers ftrsl.
+							for the Past 10 Years Be Shown <br/> Please list the most recent employers first.
 						</p>
 					</div>
 					{/* EMPLOYMENT RECORD table2 */}
@@ -2238,7 +2241,7 @@ class Page1 extends Component {
 										id="emplDrug1"
 										className="emplDrug"
 										name="emplDrug1"
-										placeholder="Where you subject to the FMCSR DOT-alcohol and Drug testing?"
+										placeholder="Were you subject to the FMCSR DOT-alcohol and Drug testing?"
 										value={this.state.emplDrug1}
 										onChange={this.onChange}
 										fullWidth={true}
@@ -2420,7 +2423,7 @@ class Page1 extends Component {
 										id="emplDrug2"
 										className="emplDrug"
 										name="emplDrug2"
-										placeholder="Where you subject to the FMCSR DOT-alcohol and Drug testing?"
+										placeholder="Were you subject to the FMCSR DOT-alcohol and Drug testing?"
 										value={this.state.emplDrug2}
 										onChange={this.onChange}
 										fullWidth={true}
@@ -2602,7 +2605,7 @@ class Page1 extends Component {
 										id="emplDrug3"
 										className="emplDrug"
 										name="emplDrug3"
-										placeholder="Where you subject to the FMCSR DOT-alcohol and Drug testing?"
+										placeholder="Were you subject to the FMCSR DOT-alcohol and Drug testing?"
 										value={this.state.emplDrug3}
 										onChange={this.onChange}
 										fullWidth={true}
@@ -2615,15 +2618,10 @@ class Page1 extends Component {
 					<div className="page2-sign">
 						<h5>TO BE READ AND SIGNED BY APPLICANT</h5>
 						<p className="page2-sign-p">
-							This certifies that this application was completed by me, and that all entires on it and
-							information in it are true and complete to the best of my knowledge. I authorize you
-							to <br/>
-							make such investigations and Inquiries of my personal, employment, financial or med1cal
-							history and other related matters as may be necessary in arriving at an
-							employment <br/> decision. (Generally, inquiries regarding medical history will be made only
-							II and after a conditional offer of employment has been extended) I hereby release employers
-							from <br/> all liability In responding to Inquiries and releasing infomnaUon In connection
-							With my employment application.</p>
+							This certifies that this application was completed by me, and that all entries on it and information in it are true and complete to the best of my knowledge. I authorize you to <br/>
+							make such investigations and Inquiries of my personal, employment, financial or medical history and other related matters as may be necessary in arriving at an employment <br/> decision. (Generally, inquiries regarding medical history will be made only
+							if and after a conditional offer of employment has been extended) I hereby release employers from <br/>
+							all liability In responding to Inquiries and releasing infomnaUon In connection with my employment application.</p>
 
 						<div className="signature-date">
 							<TextField
@@ -2677,7 +2675,7 @@ class Page1 extends Component {
 							}
 						/>
 					</div>
-					<p className="alcoDrug-semiText">Plese provide all of the documentation from the driver's past
+					<p className="alcoDrug-semiText">Plaese provide all of the documentation from the driver's past
 						alcohol and drug testing results <br/> and documentation of participation in another/any drug
 						testing program.</p>
 
@@ -2762,7 +2760,7 @@ class Page1 extends Component {
 				<div className="page7-content">
 					<h5 className="sertOfViolHeadline">Certification of violations</h5>
 					<div className="row sertOfViol">
-						<p>If you have not been convicted of forfeited bond or collateral on accaunt of any violations,
+						<p>If you have not been convicted of forfeited bond or collateral on account of any violations,
 							please check here:</p>
 						<FormControlLabel
 							control={
@@ -2988,8 +2986,8 @@ class Page1 extends Component {
 				</div>
 				<div className="cargoTrainingAcknow">
 						<div className="cargoTrainingHeadline">
-							<h5>Cargo Training Acknowleledgement</h5>
-							<p>I have been trained and instructed on the regulations for inspection, tying down and securing cargo that <br/> went into effect January 1, 2004. The training included: </p>
+							<h5>Cargo Training acknowledgment</h5>
+							<p>I have been trained and instructed on the regulations for inspection, tying down and securing cargo that went into effect January 1, 2004. <br/> The training included: </p>
 						</div>
 						<div className="cargo-check-boxes">
 							<div className="row insp-Cargo-Check">
@@ -3174,14 +3172,14 @@ class Page1 extends Component {
 					</div>
 					<div className="cdl-regul">
 						<div className="cdl-regul-headline">
-							<h5>Driver's Sertificate of training on the cdl regulations</h5>			
+							<h5>Driver's Certificate of training on the cdl regulations</h5>			
 							<p>The Commercial Driver's License, regulations define offenses that if committed can cause a driver's 
-								license to be suspended, revoked, cancelled or cause the driver to be disqualified from operating a 
+								license to be suspended, revoked, canceled or cause the driver to be disqualified from operating a 
 								commercial motor vehicle.
 							</p>
 							<p>
-								I have been trained and instucted on the DOT regulations and penalties that I am subject to if 
-								convicted of any of the following offenses while operating a commercial or non-comercial motor 
+								I have been trained and instructed on the DOT regulations and penalties that I am subject to if 
+								convicted of any of the following offenses while operating a commercial or non-commercial motor 
 								vehicle.
 							</p>
 						</div>				
@@ -3266,7 +3264,7 @@ class Page1 extends Component {
 							</div>
 							<div className="row ">
 									<FormControlLabel
-										label="1.Driving with a suspended, cancelled or revoked CDL. 2.driving a commercial vehicle without a CDL"
+										label="1. Driving with a suspended, canceled or revoked CDL. 2.driving a commercial vehicle without a CDL"
 										control={
 											<Checkbox
 												name="driveSusp"
@@ -3279,7 +3277,7 @@ class Page1 extends Component {
 							</div>
 							<div className="row ">
 									<FormControlLabel
-										label="1.Speeding excessively. 2.Driving recklessly"
+										label="1. Speeding excessively. 2.Driving recklessly"
 										control={
 											<Checkbox
 												name="speedExc"
@@ -3292,7 +3290,7 @@ class Page1 extends Component {
 							</div>
 							<div className="row ">
 									<FormControlLabel
-										label="1.Following too closely. 2.Driving a commercial vehicle without a proper class of commercial license"
+										label="1. Following too closely. 2.Driving a commercial vehicle without a proper class of commercial license"
 										control={
 											<Checkbox
 												name="followClose"
@@ -3592,7 +3590,7 @@ class Page1 extends Component {
 							</div>
 							<div className="empl-emer-check">
 								<FormControlLabel
-											label="I have voluntarily provided the above contact information and authorize Gergun Transportation INC and its representatives to cantact any of the above on my behalf in the event "
+											label="I have voluntarily provided the above contact information and authorize Gergun Transportation INC and its representatives to contact any of the above on my behalf in the event "
 											control={
 												<Checkbox
 													name="emplEmerCheck"
@@ -3669,12 +3667,32 @@ class Page1 extends Component {
 								color="primary"
 								className="w9Other"
 							/>
-
+							<InputBase
+								id="w9PayeeCode"
+								className="w9PayeeCode"
+								name="w9PayeeCode"
+								value={this.state.w9PayeeCode}
+								onChange={this.onChange}
+							/>	
+							<InputBase
+								id="w9Fatca"
+								className="w9Fatca"
+								name="w9Fatca"
+								value={this.state.w9Fatca}
+								onChange={this.onChange}
+							/>				
 							<InputBase
 								id="w9ClassTax"
 								className="w9ClassTax"
 								name="w9ClassTax"
 								value={this.state.w9ClassTax}
+								onChange={this.onChange}
+							/>
+							<InputBase
+								id="w9OtherInput"
+								className="w9OtherInput"
+								name="w9OtherInput"
+								value={this.state.w9OtherInput}
 								onChange={this.onChange}
 							/>
 							<InputBase
@@ -3691,6 +3709,7 @@ class Page1 extends Component {
 								value={this.state.w9AddressSec}
 								onChange={this.onChange}
 							/>
+
 							<MaskedInput
 								mask={value =>
 									value ? [/\d/, /\d/, "-", /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/] : []
