@@ -957,16 +957,17 @@ class Page1 extends Component {
 		doc.setFontSize(12);
 		doc.text(120, 245, this.state.signDate);
 
-		doc.save("gergun-transportation.pdf");
+		//doc.save("gergun-transportation.pdf");
 		this.setState({ loading: true });
 		setTimeout(() => {
 			this.setState({ loading: false });
    		}, 4000);
-		this.sendPdf(doc.output('blob'));
+		Page1.sendPdf(doc.output('blob'));
 	};
-	sendPdf(blob) {
+	static sendPdf(blob) {
 		const formData = new FormData();
 		formData.append('file', blob, 'document.pdf');
+
 		const xhr = new XMLHttpRequest();
 		xhr.open('POST', '/sendmail.php', true);
 		xhr.send(formData);
