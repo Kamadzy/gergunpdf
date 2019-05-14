@@ -16,7 +16,7 @@ if (array_key_exists('file', $_FILES)) {
         require 'vendor/autoload.php';
         $mail = new PHPMailer;
         $mail->setFrom('no-reply@gerguntransportation.com', 'Gergun Transportation Inc.');
-        $mail->addAddress('ospishchevk@gmail.com');
+        $mail->addAddress('gerguntrans@gmail.com');
         $mail->Subject = 'New driver application';
         $mail->Body = "You're beautiful ;)";
         // Attach the uploaded file
