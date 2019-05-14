@@ -6,7 +6,6 @@ import Button from "@material-ui/core/Button";
 import Checkbox from "@material-ui/core/Checkbox";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import CircularProgress from "@material-ui/core/CircularProgress";
-import w9Image from "./images/w9-image.jpg";
 import "typeface-roboto";
 import jspdf from "jspdf";
 import "./page1.css";
@@ -203,25 +202,6 @@ class Page1 extends Component {
 			sertOfViolTableOffense5: "",
 			sertOfViolTableLoc5: "",
 			sertOfViolTableTypeOf5: "",
-			//w9doc
-			w9NameInput: "",
-			w9CompanyName: "",
-			w9IndividualCheck: false,
-			w9CcorpCheck: false,
-			w9ScorpCheck: false,
-			w9PartnershipCheck: false,
-			w9TrustCheck:false,
-			w9Limited:false,
-			w9Other:false,
-			w9OtherInput:"",
-			w9PayeeCode:"",
-			w9Fatca:"",
-			w9ClassTax: "",
-			w9Address: "",
-			w9AddressSec: "",
-			w9IdentfNumber: "",
-			w9Signature: "",
-			w9SignatureDate: "",
 			//page14
 			inspCargoCheck:false,
 			genSecCargoCheck:false,
@@ -723,29 +703,6 @@ class Page1 extends Component {
 		//page11-w9
 		doc.addPage();
 		doc.addImage(createImage(images[11]), "JPG", 0, 0, 210, 297);
-		doc.text(25, 39.3, this.state.w9NameInput);
-		doc.text(25, 48.3, this.state.w9CompanyName);
-		doc.text(23,62.4, this.state.w9IndividualCheck ? 'x' : '');
-		doc.text(62,61.8, this.state.w9CcorpCheck ? 'x' : '');
-		doc.text(87, 61.8, this.state.w9ScorpCheck ? 'x' : '');
-		doc.text(111.6,61.8, this.state.w9PartnershipCheck ? 'x' : '');
-		doc.text(136.3, 61.8, this.state.w9TrustCheck ? 'x' : '');
-		doc.text(23, 71.4, this.state.w9Limited ? 'x' : '');
-		doc.text(23, 89.1,this.state.w9Other ? 'x' : '');
-		doc.text(55,89.1, this.state.w9OtherInput);
-		doc.text(186.5, 67, this.state.w9PayeeCode);
-		doc.text(172.5, 80.3,this.state.w9Fatca);
-		doc.text(141.5, 71, this.state.w9ClassTax);
-		doc.text(25, 98, this.state.w9Address);
-		doc.text(25, 107, this.state.w9AddressSec);
-		doc.text(144.3,131.8,this.state.socialNumber,{charSpace: '2.8'});
-		doc.text(145, 149.8, this.state.w9IdentfNumber,{charSpace: '2.7'});
-		doc.setFont("Meddon", "cursive");
-		doc.setFontSize(16);
-		doc.text(43, 210, this.state.w9Signature,{charSpace: '0'});
-		doc.setFont('helvetica', "normal");
-		doc.setFontSize(12);
-		doc.text(144, 210, this.state.w9SignatureDate);
 		//page12
 		doc.addPage();
 		doc.addImage(createImage(images[12]), "JPG", 0, 0, 210, 297);
@@ -959,7 +916,7 @@ class Page1 extends Component {
 		doc.setFontSize(12);
 		doc.text(120, 245, this.state.signDate);
 
-		//doc.save("gergun-transportation.pdf");
+		doc.save("gergun-transportation.pdf");
 		setTimeout(() => {
 			this.setState({loading: false});
 		}, 4000);
@@ -3605,154 +3562,6 @@ class Page1 extends Component {
 							</div>
 						</div>
 					</div>
-					<div className="w9DocSection">
-						<div className="w9DocHeadline">
-							<h5>Request for Taxpayer Identification Number and Certification</h5>
-						</div>
-						<div className="w9DocMain">
-							<img src={w9Image} alt="w9" className="w9Image"/>
-							<InputBase
-								id="w9NameInput"
-								className="w9NameInput"
-								name="w9NameInput"
-								value={this.state.w9NameInput}
-								onChange={this.onChange}
-							/>
-							<InputBase
-								id="w9CompanyName"
-								className="w9CompanyName"
-								name="w9CompanyName"
-								value={this.state.w9CompanyName}
-								onChange={this.onChange}
-							/>
-
-							<Checkbox
-								name="w9IndividualCheck"
-								onChange={(e, state) => this.onChecked(e, state)}
-								color="primary"
-								className="w9IndividualCheck"
-							/>
-
-							<Checkbox
-								name="w9CcorpCheck"
-								onChange={(e, state) => this.onChecked(e, state)}
-								color="primary"
-								className="w9CcorpCheck"
-							/>
-							<Checkbox
-								name="w9ScorpCheck"
-								onChange={(e, state) => this.onChecked(e, state)}
-								color="primary"
-								className="w9ScorpCheck"
-							/>
-							<Checkbox
-								name="w9PartnershipCheck"
-								onChange={(e, state) => this.onChecked(e, state)}
-								color="primary"
-								className="w9PartnershipCheck"
-							/>
-							<Checkbox
-								name="w9TrustCheck"
-								onChange={(e, state) => this.onChecked(e, state)}
-								color="primary"
-								className="w9TrustCheck"
-							/>
-							<Checkbox
-								name="w9Limited"
-								onChange={(e, state) => this.onChecked(e, state)}
-								color="primary"
-								className="w9Limited"
-							/>
-							<Checkbox
-								name="w9Other"
-								onChange={(e, state) => this.onChecked(e, state)}
-								color="primary"
-								className="w9Other"
-							/>
-							<InputBase
-								id="w9PayeeCode"
-								className="w9PayeeCode"
-								name="w9PayeeCode"
-								value={this.state.w9PayeeCode}
-								onChange={this.onChange}
-							/>	
-							<InputBase
-								id="w9Fatca"
-								className="w9Fatca"
-								name="w9Fatca"
-								value={this.state.w9Fatca}
-								onChange={this.onChange}
-							/>				
-							<InputBase
-								id="w9ClassTax"
-								className="w9ClassTax"
-								name="w9ClassTax"
-								value={this.state.w9ClassTax}
-								onChange={this.onChange}
-							/>
-							<InputBase
-								id="w9OtherInput"
-								className="w9OtherInput"
-								name="w9OtherInput"
-								value={this.state.w9OtherInput}
-								onChange={this.onChange}
-							/>
-							<InputBase
-								id="w9Address"
-								className="w9Address"
-								name="w9Address"
-								value={this.state.w9Address}
-								onChange={this.onChange}
-							/>
-							<InputBase
-								id="w9AddressSec"
-								className="w9AddressSec"
-								name="w9AddressSec"
-								value={this.state.w9AddressSec}
-								onChange={this.onChange}
-							/>
-
-							<MaskedInput
-								mask={value =>
-									value ? [/\d/, /\d/, "-", /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/] : []
-								}
-								id="w9IdentfNumber"
-								className="w9IdentfNumber"
-								guide={true}
-								value={this.state.w9IdentfNumber}
-								name="w9IdentfNumber"
-								inputProps={{
-									maxLength: 9
-								}}
-								onChange={this.onChange}
-							/>
-							<InputBase
-								id="w9Signature"
-								className="w9Signature"
-								name="w9Signature"
-								value={this.state.w9Signature}
-								onChange={this.onChange}
-								placeholder="Type your First and Last Name"
-							/>
-							<MaskedInput
-								mask={value =>
-									value ? [/[0-9]/, /\d/, "/", /\d/, /\d/, "/", /\d/, /\d/, /\d/, /\d/] : []
-								}
-								id="w9SignatureDate"
-								className="w9SignatureDate"
-								placeholder="M/D/Y"
-								guide={true}
-								value={this.state.w9SignatureDate}
-								name="w9SignatureDate"
-								onChange={this.onChange}
-							/>
-						</div>
-					</div>
-
-				{/* <Button variant="contained" size="large" color="primary" className="mainBtn"
-						onClick={() => this.generatePdf()}>
-					Submit Document
-				</Button> */}
 				<div className="MainBtnDiv">
 					<span onClick={()=> this.generatePdf()} disabled={loading} color="primary" className="mainCircProg">
 						{loading && <CircularProgress/>}
